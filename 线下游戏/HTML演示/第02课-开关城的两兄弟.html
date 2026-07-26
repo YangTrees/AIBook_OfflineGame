@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>第2课《开关城的两兄弟》- 小云雀AI探险记</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+    background: linear-gradient(135deg, #1a1a4e 0%, #2d1b69 50%, #4a2c8a 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: white;
+  }
+  .container { max-width: 1400px; margin: 0 auto; background: rgba(0,0,30,0.7); border-radius: 20px; padding: 30px; box-shadow: 0 10px 40px rgba(100,100,255,0.3); }
+  .header { text-align: center; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 3px dashed #FFD700; }
+  .lesson-num { display: inline-block; background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #1a1a4e; padding: 8px 20px; border-radius: 20px; font-size: 16px; font-weight: bold; margin-bottom: 10px; }
+  h1 { color: #FFD700; font-size: 36px; margin: 10px 0; text-shadow: 0 0 20px rgba(255,215,0,0.5); }
+  .subtitle { color: #87CEEB; font-size: 20px; margin-bottom: 10px; }
+  .knowledge { background: rgba(255,215,0,0.1); padding: 15px; border-radius: 12px; border-left: 5px solid #FFD700; margin: 15px 0; }
+  .main-area { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; margin-top: 20px; }
+  .map-area { background: rgba(0,0,50,0.5); border-radius: 15px; padding: 20px; min-height: 500px; border: 2px solid #4169E1; }
+  .map-title { text-align: center; color: #FFD700; font-size: 22px; font-weight: bold; margin-bottom: 15px; }
+  .map { position: relative; width: 100%; height: 420px; background: radial-gradient(ellipse at center, #1a1a4e 0%, #000020 100%); border-radius: 10px; overflow: hidden; }
+  .map::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: radial-gradient(2px 2px at 20% 30%, white, transparent), radial-gradient(1px 1px at 60% 70%, white, transparent), radial-gradient(2px 2px at 80% 20%, white, transparent); }
+  .castle { position: absolute; top: 30%; left: 50%; transform: translateX(-50%); width: 200px; height: 200px; background: radial-gradient(circle, #4169E1 0%, #1a1a4e 70%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 80px; box-shadow: 0 0 60px rgba(65,105,225,0.6); }
+  .street { position: absolute; background: linear-gradient(90deg, transparent, rgba(255,215,0,0.2), transparent); height: 60px; display: flex; align-items: center; justify-content: space-around; }
+  .light { width: 30px; height: 30px; border-radius: 50%; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; justify-content: center; font-size: 16px; background: #333; color: #666; border: 2px solid #555; }
+  .light.on { background: #FFD700; color: #000; border-color: #FFA500; box-shadow: 0 0 20px #FFD700; transform: scale(1.2); }
+  .light.off { background: #1a1a4e; color: #4169E1; border-color: #4169E1; box-shadow: 0 0 10px #4169E1; }
+  .character { position: absolute; font-size: 50px; cursor: pointer; transition: all 0.3s; }
+  .character:hover { transform: scale(1.15); }
+  .panel { background: rgba(0,0,30,0.8); border-radius: 15px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); border: 1px solid #4169E1; }
+  .panel h3 { color: #FFD700; margin-bottom: 15px; border-bottom: 2px dashed #4169E1; padding-bottom: 8px; }
+  .code-display { background: #000; padding: 15px; border-radius: 8px; font-family: 'Courier New', monospace; font-size: 24px; text-align: center; margin: 10px 0; border: 1px solid #FFD700; }
+  .code-display .bit { display: inline-block; width: 30px; height: 30px; line-height: 30px; margin: 0 2px; border-radius: 4px; }
+  .bit-1 { background: #FFD700; color: #000; }
+  .bit-0 { background: #1a1a4e; color: #4169E1; border: 1px solid #4169E1; }
+  .info-box { background: rgba(255,215,0,0.1); padding: 10px; border-radius: 8px; margin-top: 10px; font-size: 14px; line-height: 1.6; }
+  .btn { background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #1a1a4e; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-size: 14px; font-weight: bold; margin: 5px; }
+  .btn:hover { transform: scale(1.05); }
+  .controls { display: flex; justify-content: center; gap: 10px; margin-top: 15px; }
+  .badge { display: inline-block; background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #1a1a4e; padding: 5px 12px; border-radius: 12px; font-size: 14px; font-weight: bold; margin: 3px; }
+  .timeline { background: rgba(0,0,30,0.6); padding: 15px; border-radius: 12px; margin-top: 20px; border: 1px solid #4169E1; }
+  .timeline h3 { color: #FFD700; margin-bottom: 10px; }
+  .timeline ol { padding-left: 25px; line-height: 1.8; }
+  .feedback { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: linear-gradient(135deg, #1a1a4e 0%, #4169E1 100%); color: #FFD700; padding: 30px 50px; border-radius: 20px; box-shadow: 0 20px 60px rgba(255,215,0,0.5); font-size: 28px; z-index: 1000; display: none; text-align: center; border: 2px solid #FFD700; }
+  .feedback.show { display: block; animation: bounce 0.5s; }
+  @keyframes bounce { 0%,100% { transform: translate(-50%,-50%) scale(1); } 50% { transform: translate(-50%,-50%) scale(1.2); } }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <span class="lesson-num">第 2 课 · 基础概念</span>
+    <h1>🏰 开关城的两兄弟</h1>
+    <div class="subtitle">0和1是什么 = 电脑的两种状态</div>
+    <div class="knowledge">
+      <strong>🎯 核心知识：</strong>0代表"关/没有/停下"，1代表"开/有/运行"。
+      多个0和1排队，可以表示、存储和传递更多信息。
+    </div>
+  </div>
+
+  <div class="main-area">
+    <div class="map-area">
+      <div class="map-title">🗺️ 开关城灯光地图（点击路灯点亮）</div>
+      <div class="map" id="map">
+        <div class="character" style="top:5%; left:5%;">🧒</div>
+        <div class="character" style="top:5%; right:5%;">🤖</div>
+
+        <div class="castle">🏰</div>
+
+        <div class="street" style="top:10%; left:5%; right:5%;">
+          <div class="light off" data-bits="11110000" onclick="lightStreet(this)">1</div>
+          <div class="light off" data-bits="01100110" onclick="lightStreet(this)">1</div>
+          <div class="light off" data-bits="10101010" onclick="lightStreet(this)">1</div>
+          <div class="light off" data-bits="00001111" onclick="lightStreet(this)">1</div>
+          <div class="light off" data-bits="10000001" onclick="lightStreet(this)">1</div>
+          <div class="light off" data-bits="11111111" onclick="lightStreet(this)">1</div>
+          <div class="light off" data-bits="01010101" onclick="lightStreet(this)">1</div>
+          <div class="light off" data-bits="00110011" onclick="lightStreet(this)">1</div>
+        </div>
+        <div class="street" style="top:78%; left:5%; right:5%;">
+          <div class="light off" data-bits="11001100" onclick="lightStreet(this)">0</div>
+          <div class="light off" data-bits="00000000" onclick="lightStreet(this)">0</div>
+          <div class="light off" data-bits="11110000" onclick="lightStreet(this)">1</div>
+          <div class="light off" data-bits="10011001" onclick="lightStreet(this)">0</div>
+          <div class="light off" data-bits="01010010" onclick="lightStreet(this)">0</div>
+          <div class="light off" data-bits="00111100" onclick="lightStreet(this)">0</div>
+          <div class="light off" data-bits="11111110" onclick="lightStreet(this)">1</div>
+          <div class="light off" data-bits="00000001" onclick="lightStreet(this)">0</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="panel">
+        <h3>💡 当前选择的0/1序列</h3>
+        <div class="code-display" id="code-display">
+          <span class="bit bit-0">0</span>
+          <span class="bit bit-0">0</span>
+          <span class="bit bit-0">0</span>
+          <span class="bit bit-0">0</span>
+          <span class="bit bit-0">0</span>
+          <span class="bit bit-0">0</span>
+          <span class="bit bit-0">0</span>
+          <span class="bit bit-0">0</span>
+        </div>
+
+        <div class="info-box">
+          <strong>💡 玩法说明：</strong><br>
+          1. 点击街道上的路灯<br>
+          2. 选择1=开（黄），0=关（蓝）<br>
+          3. 8位序列 = 一个字符密码<br>
+          4. 解锁全部路灯成为"开开&关关"大师！
+        </div>
+
+        <div class="controls">
+          <button class="btn" onclick="randomCode()">🎲 随机序列</button>
+          <button class="btn" onclick="resetGame()">🔄 重置</button>
+        </div>
+
+        <div style="margin-top:15px;">
+          <strong>🏆 解锁进度：</strong>
+          <span id="progress">0/16</span>
+          <div id="badges" style="margin-top:5px;"></div>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <h3>📚 互动流程</h3>
+        <ol>
+          <li><strong>认识两兄弟</strong>：开开(1黄色) 关关(0蓝色)</li>
+          <li><strong>点亮路灯</strong>：8位序列 = 1个字符</li>
+          <li><strong>小火车</strong>：4节车厢=2位=4种组合</li>
+          <li><strong>名字编码</strong>：把名字转0和1</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="feedback" id="feedback"></div>
+
+<script>
+let unlockedCount = 0;
+const totalLights = 16;
+let currentCode = '00000000';
+
+function lightStreet(light) {
+  const bits = light.dataset.bits;
+  currentCode = bits;
+  document.getElementById('code-display').innerHTML =
+    bits.split('').map(b => `<span class="bit bit-${b}">${b}</span>`).join('');
+  light.classList.add('on');
+  light.classList.remove('off');
+  unlockedCount++;
+  document.getElementById('progress').textContent = `${unlockedCount}/${totalLights}`;
+  showFeedback("✨ 解锁了一组0/1序列！");
+  updateBadges();
+  if (unlockedCount >= totalLights) {
+    setTimeout(() => showFeedback("🎉 开关城全部点亮！"), 500);
+  }
+}
+
+function randomCode() {
+  const code = Array(8).fill(0).map(() => Math.random() > 0.5 ? 1 : 0).join('');
+  document.getElementById('code-display').innerHTML =
+    code.split('').map(b => `<span class="bit bit-${b}">${b}</span>`).join('');
+  showFeedback(`🎲 随机序列: ${code}`);
+}
+
+function updateBadges() {
+  const badges = ['🏰', '💡', '⭐', '🏆'];
+  document.getElementById('badges').innerHTML =
+    Array(Math.min(Math.floor(unlockedCount/4), 4)).fill().map((_, i) => `<span class="badge">${badges[i]}</span>`).join('');
+}
+
+function resetGame() {
+  unlockedCount = 0;
+  document.querySelectorAll('.light').forEach(l => {
+    l.classList.remove('on');
+    l.classList.add('off');
+  });
+  document.getElementById('progress').textContent = `0/${totalLights}`;
+  document.getElementById('badges').innerHTML = '';
+  showFeedback("🔄 重新开始！");
+}
+
+function showFeedback(msg) {
+  const fb = document.getElementById("feedback");
+  fb.textContent = msg;
+  fb.classList.add("show");
+  setTimeout(() => fb.classList.remove("show"), 1500);
+}
+</script>
+</body>
+</html>

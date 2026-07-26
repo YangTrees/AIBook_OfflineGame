@@ -1,0 +1,60 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>第20课《没有标签的玩具箱》</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:"Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#FFB6C1,#FFE4B5);min-height:100vh;padding:20px}.c{max-width:1400px;margin:0 auto;background:rgba(255,255,255,.95);border-radius:20px;padding:30px;box-shadow:0 10px 40px rgba(0,0,0,.1)}.h{text-align:center;margin-bottom:20px;padding-bottom:20px;border-bottom:3px dashed #FF8C00}.ln{display:inline-block;background:linear-gradient(135deg,#FF8C00,#FFA500);color:#fff;padding:8px 20px;border-radius:20px;font-size:16px;margin-bottom:10px}h1{color:#FF8C00;font-size:36px;margin:10px 0}.sub{color:#FFA500;font-size:20px;margin-bottom:10px}.k{background:linear-gradient(135deg,#FFF8DC,#FFE4B5);padding:15px;border-radius:12px;border-left:5px solid #FF8C00;margin:15px 0;font-size:16px;line-height:1.8}.m{display:grid;grid-template-columns:2fr 1fr;gap:20px;margin-top:20px}.ma{background:linear-gradient(135deg,#FFE4B5,#FFFAF0);border-radius:15px;padding:20px;min-height:500px;border:3px solid #FF8C00}.mt{text-align:center;color:#FF8C00;font-size:22px;font-weight:bold;margin-bottom:15px}.m2{position:relative;width:100%;height:420px;background:linear-gradient(180deg,#FFFAF0,#FFE4B5);border-radius:10px;overflow:hidden;border:2px solid #fff}.window{position:absolute;top:5%;left:5%;width:80px;height:60px;background:linear-gradient(180deg,#87CEEB,#fff);border:5px solid #8B4513;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:30px}.toy-box{position:absolute;top:15%;right:10%;width:30%;height:35%;background:linear-gradient(180deg,#FF8C00,#FF6347);border:5px solid #654321;border-radius:15px;display:flex;align-items:center;justify-content:center;font-size:60px;cursor:pointer;transition:all .3s;box-shadow:0 4px 15px rgba(0,0,0,.3)}.toy-box:hover{transform:scale(1.05)}.toy-box.opened{background:linear-gradient(180deg,#FFD700,#FF8C00)}.toy{position:absolute;width:50px;height:50px;background:radial-gradient(circle,#fff);border:3px solid;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;cursor:pointer;transition:all .3s;box-shadow:0 2px 5px rgba(0,0,0,.2)}.toy:hover{transform:scale(1.2)}.toy.clustered{transform:scale(.8);opacity:.7}.t-red{background:#FF6B6B;border-color:#DC143C}.t-yellow{background:#FFE66D;border-color:#FFD700}.t-blue{background:#4ECDC4;border-color:#008B8B}.cluster{position:absolute;background:rgba(255,255,255,.5);border:2px dashed;border-radius:10px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;padding:5px;gap:3px;transition:all .3s}.cluster.c1{bottom:5%;left:10%;width:25%;height:30%;border-color:#DC143C}.cluster.c2{bottom:5%;left:40%;width:25%;height:30%;border-color:#FFD700}.cluster.c3{bottom:5%;right:10%;width:25%;height:30%;border-color:#008B8B}.c2{position:absolute;font-size:50px}.robot{position:absolute;top:50%;left:45%;font-size:50px;cursor:pointer;transition:all .3s;transform:translateX(-50%)}.robot:hover{transform:translateX(-50%) scale(1.1)}.loc{position:absolute;background:#fff;border:3px solid #FF8C00;border-radius:10px;padding:6px 10px;cursor:pointer;transition:all .3s;font-size:12px;box-shadow:0 4px 10px rgba(0,0,0,.2);text-align:center;min-width:70px}.loc:hover{transform:scale(1.1);background:#FFE4B5}.loc.found{background:#90EE90;border-color:#228B22}.p{background:#fff;border-radius:15px;padding:20px;box-shadow:0 4px 15px rgba(0,0,0,.1)}.p h3{color:#FF8C00;margin-bottom:15px;border-bottom:2px dashed #FFA500;padding-bottom:8px}.data{background:linear-gradient(135deg,#FFF8DC,#FFE4B5);padding:10px;border-radius:8px;margin-bottom:10px;text-align:center}.data .big{font-size:32px;color:#228B22;font-weight:bold}.cg{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:15px}.cd{background:linear-gradient(135deg,#FFF8DC,#FFE4B5);border:2px solid #FF8C00;border-radius:8px;padding:10px;text-align:center;cursor:pointer;transition:all .3s;font-size:12px;min-height:70px;display:flex;flex-direction:column;justify-content:center;align-items:center}.cd:hover{transform:translateY(-3px)}.cd .e{font-size:24px;margin-bottom:5px}.cd.used{opacity:.4}.cd.correct{background:#90EE90;border-color:#228B22}.ib{background:#FFF8DC;padding:10px;border-radius:8px;margin-top:10px;font-size:13px;line-height:1.6}.b{background:linear-gradient(135deg,#FF8C00,#FFA500);color:#fff;border:none;padding:10px 20px;border-radius:20px;cursor:pointer;font-size:14px;margin:5px;font-weight:bold}.ctl{display:flex;justify-content:center;gap:10px;margin-top:15px}.bd{display:inline-block;background:#FF8C00;color:#fff;padding:5px 12px;border-radius:12px;font-size:14px;font-weight:bold;margin:3px}.tl{background:#fff;padding:15px;border-radius:12px;margin-top:20px;border:2px solid #FFA500}.tl h3{color:#FF8C00;margin-bottom:10px}.tl ol{padding-left:25px;line-height:1.8}.fb{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:linear-gradient(135deg,#FF8C00,#FFA500);color:#fff;padding:30px 50px;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,.3);font-size:28px;z-index:1000;display:none;text-align:center;font-weight:bold}.fb.show{display:block;animation:bounce .5s}@keyframes bounce{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.2)}}</style></head>
+<body><div class="c">
+<div class="h"><span class="ln">第 20 课 · 机器学习</span><h1>📦 没有标签的玩具箱</h1><div class="sub">无监督学习 = 自己找规律</div>
+<div class="k"><strong>🎯 核心知识：</strong>无监督学习：没有标签，AI自己发现规律。聚类=把相似的东西分一组！</div></div>
+<div class="m">
+<div class="ma"><div class="mt">🗺️ 儿童房玩具箱聚类地图（点击玩具分类）</div>
+<div class="m2" id="map">
+<div class="window">🪟</div>
+<div class="toy-box" id="toyBox" onclick="openBox()">📦</div>
+<div class="toy t-red" style="top:55%;left:10%" data-color="red" data-cluster="c1" onclick="clickToy(this)">🚗</div>
+<div class="toy t-red" style="top:60%;left:18%" data-color="red" data-cluster="c1" onclick="clickToy(this)">🚙</div>
+<div class="toy t-red" style="top:55%;left:26%" data-color="red" data-cluster="c1" onclick="clickToy(this)">🏎️</div>
+<div class="toy t-yellow" style="top:65%;left:34%" data-color="yellow" data-cluster="c2" onclick="clickToy(this)">🟡</div>
+<div class="toy t-yellow" style="top:60%;left:42%" data-color="yellow" data-cluster="c2" onclick="clickToy(this)">⭐</div>
+<div class="toy t-yellow" style="top:65%;left:50%" data-color="yellow" data-cluster="c2" onclick="clickToy(this)">🌟</div>
+<div class="toy t-blue" style="top:55%;right:26%" data-color="blue" data-cluster="c3" onclick="clickToy(this)">🔵</div>
+<div class="toy t-blue" style="top:60%;right:18%" data-color="blue" data-cluster="c3" onclick="clickToy(this)">🚀</div>
+<div class="toy t-blue" style="top:55%;right:10%" data-color="blue" data-cluster="c3" onclick="clickToy(this)">🛸</div>
+<div class="cluster c1"></div>
+<div class="cluster c2"></div>
+<div class="cluster c3"></div>
+<div class="robot" id="robot" onclick="clickRobot()">🤖</div>
+<div class="c2" style="top:5%;right:3%">🧒</div><div class="c2" style="top:5%;right:15%">🤖</div>
+<div class="loc" style="top:5%;right:35%" data-id="A1" onclick="findLoc(this)">🪟窗户</div>
+</div></div>
+<div>
+<div class="p"><h3>🤖 无监督聚类台</h3>
+<div class="data">
+<div>已聚类：<span class="big" id="count">0</span>/9</div>
+<div>聚类结果：<span id="result">未开始</span></div>
+</div>
+<div class="cg" id="cards">
+<div class="cd" data-id="A1" onclick="checkCard(this)"><div class="e">🪟</div><div>找窗户</div></div>
+<div class="cd" data-id="B1" onclick="checkCard(this)"><div class="e">📦</div><div>找玩具箱</div></div>
+<div class="cd" data-id="B2" onclick="checkCard(this)"><div class="e">🚗</div><div>找红车</div></div>
+<div class="cd" data-id="B3" onclick="checkCard(this)"><div class="e">⭐</div><div>找黄星</div></div>
+<div class="cd" data-id="C1" onclick="checkCard(this)"><div class="e">🚀</div><div>找蓝飞碟</div></div>
+<div class="cd" data-id="C2" onclick="checkCard(this)"><div class="e">🟡</div><div>找黄圆</div></div>
+<div class="cd" data-id="C3" onclick="checkCard(this)"><div class="e">🔵</div><div>找蓝圆</div></div>
+<div class="cd" data-id="D1" onclick="checkCard(this)"><div class="e">🤖</div><div>找机器人</div></div>
+</div>
+<div class="ib"><strong>💡 玩法：</strong>无标签玩具分类！<br>1. 点击打开玩具箱<br>2. 把同色玩具分组<br>3. 红色一组、黄色一组、蓝色一组<br>4. AI自己找规律！</div>
+<div class="ctl"><button class="b" onclick="autoCluster()">🤖 自动聚类</button><button class="b" onclick="resetGame()">🔄 重置</button></div>
+<div style="margin-top:15px"><strong>🏆 进度：</strong> <span id="prog">0/8</span><div id="badges" style="margin-top:5px"></div></div>
+</div>
+<div class="tl"><h3>📚 互动流程</h3><ol><li><strong>打开玩具箱</strong>：玩具哗啦啦</li><li><strong>无标签</strong>：自己找规律</li><li><strong>按颜色分</strong>：红/黄/蓝</li><li><strong>聚类完成</strong>：3堆</li></ol></div>
+</div></div></div>
+<div class="fb" id="fb"></div>
+<script>let cnt=0,total=8,count=0,boxOpened=false;
+function findLoc(el){if(el.dataset.found==="true")return;el.dataset.found="true";el.classList.add("found");showFb("✅ 找到了！");chk()}
+function checkCard(c){if(c.classList.contains("used"))return;const id=c.dataset.id;const loc=document.querySelector(`.loc[data-id="${id}"]`);if(loc&&loc.dataset.found==="true"){c.classList.add("used","correct");cnt++;upd();showFb("🎉 答对了！")}else{showFb("❌ 先在地图上找到！")}}
+function showFb(m){const f=document.getElementById("fb");f.textContent=m;f.classList.add("show");setTimeout(()=>f.classList.remove("show"),1500)}
+function upd(){document.getElementById("prog").textContent=`${cnt}/${total}`;const b=["📦","🚗","⭐","🏆"];document.getElementById("badges").innerHTML=Array(Math.min(cnt,4)).fill().map((_,i)=>`<span class="bd">${b[i]}</span>`).join("")}
+function chk(){const f=document.querySelectorAll('.loc[data-found="true"]').length;if(f>=1)setTimeout(()=>showFb("🎊 玩具箱场景完成！"),500)}
+function openBox(){boxOpened=true;document.getElementById('toyBox').classList.add('opened');document.getElementById('toyBox').textContent='✨';showFb("📦 玩具箱打开！")}
+function clickToy(t){if(!boxOpened){showFb("⚠️ 先打开玩具箱！");return}if(t.classList.contains('clustered'))return;const cluster=document.querySelector(`.${t.dataset.cluster}`);cluster.appendChild(t);t.classList.add('clustered');count++;document.getElementById('count').textContent=count;if(count>=9){document.getElementById('result').textContent='3堆（按颜色）';showFb("🎉 聚类完成！3堆！")}}
+function clickRobot(){if(count>=9)showFb("🤖 AI无监督学习完成！");else showFb("⚠️ 还没完成聚类！")}
+function autoCluster(){if(!boxOpened)openBox();const toys=document.querySelectorAll('.toy');toys.forEach(t=>{const cluster=document.querySelector(`.${t.dataset.cluster}`);cluster.appendChild(t);t.classList.add('clustered');count++});document.getElementById('count').textContent=count;document.getElementById('result').textContent='3堆（按颜色）';showFb("🤖 AI无监督学习完成！")}
+function resetGame(){cnt=0;count=0;boxOpened=false;document.getElementById('count').textContent='0';document.getElementById('result').textContent='未开始';document.getElementById('toyBox').classList.remove('opened');document.getElementById('toyBox').textContent='📦';document.querySelectorAll('.loc').forEach(e=>{e.dataset.found="false";e.classList.remove("found")});document.querySelectorAll('.cd').forEach(c=>c.classList.remove("used","correct"));document.querySelectorAll('.toy').forEach(t=>{t.classList.remove('clustered');document.querySelectorAll('.cluster').forEach(cl=>{if(t.parentNode===cl)t.remove()})});const t1=document.querySelector('.t-red');t1.parentNode.insertBefore(t1,t1.parentNode.firstChild);upd();showFb("🔄 重置！")}</script>
+</body></html>

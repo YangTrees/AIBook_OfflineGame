@@ -1,0 +1,60 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>第9课《红灯停绿灯行》</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:"Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#87CEEB,#4682B4);min-height:100vh;padding:20px}.c{max-width:1400px;margin:0 auto;background:rgba(255,255,255,.95);border-radius:20px;padding:30px;box-shadow:0 10px 40px rgba(0,0,0,.1)}.h{text-align:center;margin-bottom:20px;padding-bottom:20px;border-bottom:3px dashed #228B22}.ln{display:inline-block;background:linear-gradient(135deg,#FF0000,#FFFF00,#00FF00);color:#000;padding:8px 20px;border-radius:20px;font-size:16px;margin-bottom:10px;font-weight:bold}h1{color:#228B22;font-size:36px;margin:10px 0}.sub{color:#4169E1;font-size:20px;margin-bottom:10px}.k{background:linear-gradient(135deg,#FFFACD,#F0FFF0);padding:15px;border-radius:12px;border-left:5px solid #228B22;margin:15px 0;font-size:16px;line-height:1.8}.m{display:grid;grid-template-columns:2fr 1fr;gap:20px;margin-top:20px}.ma{background:linear-gradient(135deg,#F0F8FF,#E0FFFF);border-radius:15px;padding:20px;min-height:500px;border:3px solid #228B22}.mt{text-align:center;color:#228B22;font-size:22px;font-weight:bold;margin-bottom:15px}.m2{position:relative;width:100%;height:420px;background:linear-gradient(180deg,#87CEEB,#98FB98);border-radius:10px;overflow:hidden;border:2px solid #fff}.road-v{position:absolute;background:#333;left:48%;width:4%;height:100%}.road-h{position:absolute;background:#333;top:48%;width:100%;height:4%}.dash{position:absolute;background:#FFD700;width:6px;height:6px}.dash-v{left:49.5%}.dash-h{top:49.5%}.light{position:absolute;background:#222;padding:8px 4px;border-radius:8px;display:flex;flex-direction:column;gap:3px;border:2px solid #555}.bulb{width:24px;height:24px;border-radius:50%;background:#444;cursor:pointer;transition:all .3s;border:2px solid #222}.bulb:hover{transform:scale(1.2)}.bulb.on-r{background:#FF0000;box-shadow:0 0 20px #FF0000}.bulb.on-y{background:#FFFF00;box-shadow:0 0 20px #FFFF00}.bulb.on-g{background:#00FF00;box-shadow:0 0 20px #00FF00}.l1{top:42%;left:42%}.l2{top:42%;right:42%}.l3{bottom:42%;left:42%}.l4{bottom:42%;right:42%}.car{position:absolute;font-size:30px;cursor:pointer;transition:all .5s;background:rgba(255,255,255,.9);border-radius:8px;padding:5px 10px;display:flex;align-items:center;gap:5px}.car:hover{transform:scale(1.1)}.ped{position:absolute;background:rgba(255,255,255,.9);border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:20px;cursor:pointer;transition:all .3s}.ped:hover{transform:scale(1.15)}.c2{position:absolute;font-size:50px}.btn-light{position:absolute;background:rgba(0,0,0,.7);color:#fff;padding:8px 12px;border-radius:20px;cursor:pointer;font-size:14px;border:2px solid #fff;z-index:10}.loc{position:absolute;background:#fff;border:3px solid #228B22;border-radius:10px;padding:6px 10px;cursor:pointer;transition:all .3s;font-size:12px;box-shadow:0 4px 10px rgba(0,0,0,.2);text-align:center;min-width:70px}.loc:hover{transform:scale(1.1)}.loc.found{background:#90EE90;border-color:#006400}.p{background:#fff;border-radius:15px;padding:20px;box-shadow:0 4px 15px rgba(0,0,0,.1)}.p h3{color:#228B22;margin-bottom:15px;border-bottom:2px dashed #4169E1;padding-bottom:8px}.rule{background:linear-gradient(135deg,#FFFACD,#F0FFF0);padding:10px;border-radius:8px;margin-bottom:10px;font-size:13px}.rule strong{color:#FF0000}.cg{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:15px}.cd{background:linear-gradient(135deg,#FFFACD,#F0FFF0);border:2px solid #228B22;border-radius:8px;padding:10px;text-align:center;cursor:pointer;transition:all .3s;font-size:12px;min-height:70px;display:flex;flex-direction:column;justify-content:center;align-items:center}.cd:hover{transform:translateY(-3px)}.cd .e{font-size:24px;margin-bottom:5px}.cd.used{opacity:.4}.cd.correct{background:#90EE90;border-color:#006400}.ib{background:#FFFACD;padding:10px;border-radius:8px;margin-top:10px;font-size:13px;line-height:1.6}.b{background:linear-gradient(135deg,#FF0000,#FFFF00,#00FF00);color:#000;border:none;padding:10px 20px;border-radius:20px;cursor:pointer;font-size:14px;margin:5px;font-weight:bold}.ctl{display:flex;justify-content:center;gap:10px;margin-top:15px}.bd{display:inline-block;background:#228B22;color:#fff;padding:5px 12px;border-radius:12px;font-size:14px;font-weight:bold;margin:3px}.tl{background:#fff;padding:15px;border-radius:12px;margin-top:20px;border:2px solid #228B22}.tl h3{color:#228B22;margin-bottom:10px}.tl ol{padding-left:25px;line-height:1.8}.fb{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:linear-gradient(135deg,#FF0000,#FFFF00,#00FF00);color:#000;padding:30px 50px;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,.3);font-size:28px;z-index:1000;display:none;text-align:center;font-weight:bold}.fb.show{display:block;animation:bounce .5s}@keyframes bounce{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.2)}}</style></head>
+<body><div class="c">
+<div class="h"><span class="ln">第 9 课 · 基础概念</span><h1>🚦 红灯停绿灯行</h1><div class="sub">条件判断 = 如果...那么...</div>
+<div class="k"><strong>🎯 核心知识：</strong>如果满足条件，就执行对应动作。条件可叠加（而且）。电脑靠无数个"如果...就..."运行！</div></div>
+<div class="m">
+<div class="ma"><div class="mt">🗺️ 十字路口交通地图（点击灯泡）</div>
+<div class="m2" id="map">
+<div class="road-v"></div><div class="road-h"></div>
+<div class="c2" style="top:5%;left:3%">🧒</div><div class="c2" style="top:5%;left:15%">🤖</div>
+<div class="light l1" data-light="1"><div class="bulb on-r" data-color="r" data-light="1" onclick="clickLight(this)"></div><div class="bulb" data-color="y" data-light="1" onclick="clickLight(this)"></div><div class="bulb" data-color="g" data-light="1" onclick="clickLight(this)"></div></div>
+<div class="light l2" data-light="2"><div class="bulb" data-color="r" data-light="2" onclick="clickLight(this)"></div><div class="bulb on-y" data-color="y" data-light="2" onclick="clickLight(this)"></div><div class="bulb" data-color="g" data-light="2" onclick="clickLight(this)"></div></div>
+<div class="light l3" data-light="3"><div class="bulb" data-color="r" data-light="3" onclick="clickLight(this)"></div><div class="bulb" data-color="y" data-light="3" onclick="clickLight(this)"></div><div class="bulb on-g" data-color="g" data-light="3" onclick="clickLight(this)"></div></div>
+<div class="light l4" data-light="4"><div class="bulb on-g" data-color="g" data-light="4" onclick="clickLight(this)"></div><div class="bulb" data-color="y" data-light="4" onclick="clickLight(this)"></div><div class="bulb" data-color="r" data-light="4" onclick="clickLight(this)"></div></div>
+<div class="car" style="top:30%;left:30%">🚗 北→南</div>
+<div class="car" style="top:65%;right:25%">🚙 南→北</div>
+<div class="car" style="top:30%;right:10%">🚕 东→西</div>
+<div class="car" style="bottom:25%;left:10%">🚐 西→东</div>
+<div class="ped" style="top:30%;left:48%">🚶</div>
+<div class="ped" style="top:65%;left:48%">🚶‍♀️</div>
+<div class="ped" style="top:48%;left:30%">🧑</div>
+<div class="ped" style="top:48%;right:30%">👵</div>
+<div class="loc" style="top:5%;right:5%" data-id="A1" onclick="findLoc(this)">🏪智能商店</div>
+<div class="loc" style="bottom:5%;left:5%" data-id="A2" onclick="findLoc(this)">🍦冰淇淋</div>
+<div class="loc" style="bottom:5%;right:5%" data-id="A3" onclick="findLoc(this)">⏰闹钟</div>
+</div></div>
+<div>
+<div class="p"><h3>🚦 交通规则台</h3>
+<div class="rule">
+<div>当前规则：<strong>如果 红灯亮 → 那么 停下</strong></div>
+<div>如果 绿灯亮 → 那么 前进</div>
+<div>如果 黄灯亮 → 那么 等一等</div>
+</div>
+<div class="cg" id="cards">
+<div class="cd" data-id="A1" onclick="checkCard(this)"><div class="e">🏪</div><div>找智能商店</div></div>
+<div class="cd" data-id="A2" onclick="checkCard(this)"><div class="e">🍦</div><div>找冰淇淋</div></div>
+<div class="cd" data-id="A3" onclick="checkCard(this)"><div class="e">⏰</div><div>找闹钟</div></div>
+<div class="cd" data-id="B1" onclick="checkCard(this)"><div class="e">🚗</div><div>找北→南车</div></div>
+<div class="cd" data-id="B2" onclick="checkCard(this)"><div class="e">🚙</div><div>找南→北车</div></div>
+<div class="cd" data-id="C1" onclick="checkCard(this)"><div class="e">🚶</div><div>找行人1</div></div>
+<div class="cd" data-id="C2" onclick="checkCard(this)"><div class="e">🚶‍♀️</div><div>找行人2</div></div>
+<div class="cd" data-id="D1" onclick="checkCard(this)"><div class="e">🚦</div><div>找红绿灯</div></div>
+</div>
+<div class="ib"><strong>💡 玩法：</strong>遵守红绿灯！<br>1. 点击灯泡切换红/黄/绿<br>2. 看车和行人按规则行动<br>3. 设计你自己的规则！</div>
+<div class="ctl"><button class="b" onclick="autoLight()">🚦 自动循环</button><button class="b" onclick="resetGame()">🔄 重置</button></div>
+<div style="margin-top:15px"><strong>🏆 进度：</strong> <span id="prog">0/8</span><div id="badges" style="margin-top:5px"></div></div>
+</div>
+<div class="tl"><h3>📚 互动流程</h3><ol><li><strong>认识红绿灯</strong>：红/黄/绿</li><li><strong>交通规则</strong>：如果...那么...</li><li><strong>双条件</strong>：光线+按钮</li><li><strong>自定义规则</strong>：行人按钮</li></ol></div>
+</div></div></div>
+<div class="fb" id="fb"></div>
+<script>let cnt=0,total=8,lightStep=0;
+const rules=[{r:1,g:3,y:2},{r:1,y:2,g:3},{r:1,y:2,g:3}];
+function findLoc(el){if(el.dataset.found==="true")return;el.dataset.found="true";el.classList.add("found");showFb("✅ 找到了！");chk()}
+function checkCard(c){if(c.classList.contains("used"))return;const id=c.dataset.id;const loc=document.querySelector(`.loc[data-id="${id}"]`);if(loc&&loc.dataset.found==="true"){c.classList.add("used","correct");cnt++;upd();showFb("🎉 答对了！")}else{showFb("❌ 先在地图上找到！")}}
+function showFb(m){const f=document.getElementById("fb");f.textContent=m;f.classList.add("show");setTimeout(()=>f.classList.remove("show"),1500)}
+function upd(){document.getElementById("prog").textContent=`${cnt}/${total}`;const b=["🚦","🚗","🚶","🏆"];document.getElementById("badges").innerHTML=Array(Math.min(cnt,4)).fill().map((_,i)=>`<span class="bd">${b[i]}</span>`).join("")}
+function chk(){const f=document.querySelectorAll('.loc[data-found="true"]').length;if(f>=3)setTimeout(()=>showFb("🎊 十字路口完成！"),500)}
+function clickLight(bulb){const id=bulb.dataset.light;const color=bulb.dataset.color;document.querySelectorAll(`.bulb[data-light="${id}"]`).forEach(b=>b.className='bulb');bulb.classList.add(`on-${color}`);showFb(`信号灯${id}=${color.toUpperCase()}`)}
+function autoLight(){const seq=['r','r','y','g','g','y'];let i=0;const colors={'r':'红','y':'黄','g':'绿'};const intv=setInterval(()=>{if(i>=seq.length){clearInterval(intv);return;}const c=seq[i];document.querySelectorAll('.bulb').forEach(b=>b.className='bulb');document.querySelectorAll(`.bulb[data-color="${c}"]`).forEach(b=>b.classList.add(`on-${c}`));showFb(`当前：${colors[c]}灯`);i++},800)}
+function resetGame(){cnt=0;document.querySelectorAll('.loc').forEach(e=>{e.dataset.found="false";e.classList.remove("found")});document.querySelectorAll('.cd').forEach(c=>c.classList.remove("used","correct"));upd();showFb("🔄 重置！")}</script>
+</body></html>

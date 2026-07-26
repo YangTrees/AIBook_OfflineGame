@@ -1,0 +1,52 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>第28课《会编故事的机器人》</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:"Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#8B4513,#D2691E);min-height:100vh;padding:20px}.c{max-width:1400px;margin:0 auto;background:rgba(255,255,255,.95);border-radius:20px;padding:30px;box-shadow:0 10px 40px rgba(0,0,0,.1)}.h{text-align:center;margin-bottom:20px;padding-bottom:20px;border-bottom:3px dashed #8B4513}.ln{display:inline-block;background:linear-gradient(135deg,#8B4513,#A0522D);color:#fff;padding:8px 20px;border-radius:20px;font-size:16px;margin-bottom:10px}h1{color:#8B4513;font-size:36px;margin:10px 0}.sub{color:#A0522D;font-size:20px;margin-bottom:10px}.k{background:linear-gradient(135deg,#FFF8DC,#F5DEB3);padding:15px;border-radius:12px;border-left:5px solid #8B4513;margin:15px 0;font-size:16px;line-height:1.8}.m{display:grid;grid-template-columns:2fr 1fr;gap:20px;margin-top:20px}.ma{background:linear-gradient(135deg,#FFF8DC,#FAEBD7);border-radius:15px;padding:20px;min-height:500px;border:3px solid #8B4513}.mt{text-align:center;color:#8B4513;font-size:22px;font-weight:bold;margin-bottom:15px}.m2{position:relative;width:100%;height:420px;background:linear-gradient(180deg,#FFFAF0,#DEB887);border-radius:10px;overflow:hidden;border:2px solid #fff}.shelf{position:absolute;top:5%;left:5%;width:60px;height:90%;background:linear-gradient(180deg,#8B4513,#A0522D);border:2px solid #fff;display:flex;flex-direction:column;align-items:center;justify-content:space-around;padding:5px 0}.book{width:90%;height:18%;background:linear-gradient(90deg,#4169E1,#FF6347);border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;font-weight:bold}.desk{position:absolute;bottom:5%;left:25%;right:5%;height:35%;background:linear-gradient(180deg,#A0522D,#8B4513);border:3px solid #654321;border-radius:5px;display:flex;align-items:center;justify-content:center}.robot{position:absolute;top:25%;left:35%;width:60px;height:80px;background:radial-gradient(circle,#fff,#4169E1);border:3px solid #00008B;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:40px;cursor:pointer;transition:all .3s;box-shadow:0 0 20px rgba(65,105,225,.5)}.robot:hover{transform:scale(1.1)}.story{position:absolute;background:#fff;border:2px solid #8B4513;border-radius:8px;padding:10px;font-size:12px;cursor:pointer;transition:all .3s;box-shadow:0 2px 5px rgba(0,0,0,.2);width:130px;min-height:60px;display:flex;align-items:center;justify-content:center;text-align:center;line-height:1.4;font-weight:bold}.story:hover{transform:scale(1.1)}.story.fake{border-color:#FF6347;background:#FFE4E1}.story.real{border-color:#228B22;background:#E0FFE0}.s1{top:10%;right:5%}.s2{top:35%;right:5%}.s3{top:60%;right:5%}.c2{position:absolute;font-size:50px}.truth-book{position:absolute;top:10%;right:25%;width:80px;height:100px;background:linear-gradient(180deg,#FF6347,#DC143C);border:3px solid #8B0000;border-radius:3px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:bold;text-align:center;padding:5px;cursor:pointer}.truth-book:hover{transform:scale(1.05)}.loc{position:absolute;background:#fff;border:3px solid #8B4513;border-radius:10px;padding:6px 10px;cursor:pointer;transition:all .3s;font-size:12px;box-shadow:0 4px 10px rgba(0,0,0,.2);text-align:center;min-width:70px}.loc:hover{transform:scale(1.1);background:#FFF8DC}.loc.found{background:#90EE90;border-color:#228B22}.p{background:#fff;border-radius:15px;padding:20px;box-shadow:0 4px 15px rgba(0,0,0,.1)}.p h3{color:#8B4513;margin-bottom:15px;border-bottom:2px dashed #A0522D;padding-bottom:8px}.data{background:linear-gradient(135deg,#FFF8DC,#F5DEB3);padding:10px;border-radius:8px;margin-bottom:10px;text-align:center}.data .big{font-size:32px;color:#228B22;font-weight:bold}.cg{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:15px}.cd{background:linear-gradient(135deg,#FFF8DC,#F5DEB3);border:2px solid #8B4513;border-radius:8px;padding:10px;text-align:center;cursor:pointer;transition:all .3s;font-size:12px;min-height:70px;display:flex;flex-direction:column;justify-content:center;align-items:center}.cd:hover{transform:translateY(-3px)}.cd .e{font-size:24px;margin-bottom:5px}.cd.used{opacity:.4}.cd.correct{background:#90EE90;border-color:#228B22}.ib{background:#FFF8DC;padding:10px;border-radius:8px;margin-top:10px;font-size:13px;line-height:1.6}.b{background:linear-gradient(135deg,#8B4513,#A0522D);color:#fff;border:none;padding:10px 20px;border-radius:20px;cursor:pointer;font-size:14px;margin:5px;font-weight:bold}.ctl{display:flex;justify-content:center;gap:10px;margin-top:15px}.bd{display:inline-block;background:#8B4513;color:#fff;padding:5px 12px;border-radius:12px;font-size:14px;font-weight:bold;margin:3px}.tl{background:#fff;padding:15px;border-radius:12px;margin-top:20px;border:2px solid #A0522D}.tl h3{color:#8B4513;margin-bottom:10px}.tl ol{padding-left:25px;line-height:1.8}.fb{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:linear-gradient(135deg,#8B4513,#A0522D);color:#fff;padding:30px 50px;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,.3);font-size:28px;z-index:1000;display:none;text-align:center;font-weight:bold}.fb.show{display:block;animation:bounce .5s}@keyframes bounce{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.2)}}</style></head>
+<body><div class="c">
+<div class="h"><span class="ln">第 28 课 · 大语言模型</span><h1>🤖 会编故事的机器人</h1><div class="sub">AI幻觉 = 听起来对但实际错</div>
+<div class="k"><strong>🎯 核心知识：</strong>AI有时会说"听起来对但实际错"的话——这叫"幻觉"！要查一查、问一问、想一想！</div></div>
+<div class="m">
+<div class="ma"><div class="mt">🗺️ 书房信息核查地图（点击故事卡）</div>
+<div class="m2" id="map">
+<div class="shelf"><div class="book">📕</div><div class="book">📗</div><div class="book">📘</div><div class="book">📙</div></div>
+<div class="desk"></div>
+<div class="c2" style="top:5%;left:50%">🧒</div><div class="c2" style="top:5%;left:60%">🤖</div>
+<div class="robot" onclick="clickRobot()">🤖</div>
+<div class="truth-book" onclick="checkTruth()">📚<br>科普书</div>
+<div class="story fake" data-type="fake" onclick="checkStory(this)">🐱小猫<br>用翅膀飞</div>
+<div class="story real" data-type="real" onclick="checkStory(this)">🌙月亮<br>岩石尘埃</div>
+<div class="story fake" data-type="fake" onclick="checkStory(this)">🐸青蛙<br>生活在水里</div>
+<div class="loc" style="top:5%;left:3%" data-id="A1" onclick="findLoc(this)">🤖机器人</div>
+</div></div>
+<div>
+<div class="p"><h3>🔍 信息核查台</h3>
+<div class="data">
+<div>已核查：<span class="big" id="count">0</span>/3</div>
+<div>正确判断：<span id="correct">0</span></div>
+</div>
+<div class="cg" id="cards">
+<div class="cd" data-id="A1" onclick="checkCard(this)"><div class="e">🤖</div><div>找机器人</div></div>
+<div class="cd" data-id="B1" onclick="checkCard(this)"><div class="e">📚</div><div>找科普书</div></div>
+<div class="cd" data-id="B2" onclick="checkCard(this)"><div class="e">📕</div><div>找故事书</div></div>
+<div class="cd" data-id="B3" onclick="checkCard(this)"><div class="e">🔍</div><div>找放大镜</div></div>
+<div class="cd" data-id="C1" onclick="checkCard(this)"><div class="e">✅</div><div>找绿色对勾</div></div>
+<div class="cd" data-id="C2" onclick="checkCard(this)"><div class="e">❌</div><div>找红色叉</div></div>
+<div class="cd" data-id="C3" onclick="checkCard(this)"><div class="e">❓</div><div>找问号</div></div>
+<div class="cd" data-id="D1" onclick="checkCard(this)"><div class="e">📞</div><div>找求助</div></div>
+</div>
+<div class="ib"><strong>💡 玩法：</strong>核查AI信息！<br>1. 点击故事卡<br>2. 判断真假<br>3. 查科普书验证！<br>4. AI会幻觉！</div>
+<div class="ctl"><button class="b" onclick="autoCheck()">🤖 自动核查</button><button class="b" onclick="resetGame()">🔄 重置</button></div>
+<div style="margin-top:15px"><strong>🏆 进度：</strong> <span id="prog">0/8</span><div id="badges" style="margin-top:5px"></div></div>
+</div>
+<div class="tl"><h3>📚 互动流程</h3><ol><li><strong>AI讲故事</strong>：会编</li><li><strong>真假判断</strong>：听起来对</li><li><strong>查科普</strong>：验证</li><li><strong>三步法</strong>：查/问/想</li></ol></div>
+</div></div></div>
+<div class="fb" id="fb"></div>
+<script>let cnt=0,total=8,count=0,correct=0;
+function findLoc(el){if(el.dataset.found==="true")return;el.dataset.found="true";el.classList.add("found");showFb("✅ 找到了！");chk()}
+function checkCard(c){if(c.classList.contains("used"))return;const id=c.dataset.id;const loc=document.querySelector(`.loc[data-id="${id}"]`);if(loc&&loc.dataset.found==="true"){c.classList.add("used","correct");cnt++;upd();showFb("🎉 答对了！")}else{showFb("❌ 先在地图上找到！")}}
+function showFb(m){const f=document.getElementById("fb");f.textContent=m;f.classList.add("show");setTimeout(()=>f.classList.remove("show"),1500)}
+function upd(){document.getElementById("prog").textContent=`${cnt}/${total}`;const b=["🤖","📚","🔍","🏆"];document.getElementById("badges").innerHTML=Array(Math.min(cnt,4)).fill().map((_,i)=>`<span class="bd">${b[i]}</span>`).join("")}
+function chk(){const f=document.querySelectorAll('.loc[data-found="true"]').length;if(f>=1)setTimeout(()=>showFb("🎊 书房场景完成！"),500)}
+function checkStory(s){count++;if(s.dataset.type==='real'){correct++;showFb("✅ 正确！这是真的！")}else{showFb("❌ 错误！这是AI幻觉！")}document.getElementById('count').textContent=count;document.getElementById('correct').textContent=correct;s.style.opacity=.5}
+function clickRobot(){showFb("🤖 AI在讲故事...")}
+function checkTruth(){showFb("📚 查科普书：岩石尘埃！")}
+function autoCheck(){const stories=document.querySelectorAll('.story');stories.forEach((s,i)=>setTimeout(()=>checkStory(s),i*1000))}
+function resetGame(){cnt=0;count=0;correct=0;document.getElementById('count').textContent='0';document.getElementById('correct').textContent='0';document.querySelectorAll('.loc').forEach(e=>{e.dataset.found="false";e.classList.remove("found")});document.querySelectorAll('.cd').forEach(c=>c.classList.remove("used","correct"));document.querySelectorAll('.story').forEach(s=>s.style.opacity=1);upd();showFb("🔄 重置！")}</script>
+</body></html>

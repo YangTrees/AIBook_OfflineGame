@@ -1,0 +1,45 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>第4课《仓库管理员机器人》</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:"Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#FFF8DC,#F0E68C);min-height:100vh;padding:20px}.c{max-width:1400px;margin:0 auto;background:rgba(255,255,255,.95);border-radius:20px;padding:30px;box-shadow:0 10px 40px rgba(0,0,0,.1)}.h{text-align:center;margin-bottom:20px;padding-bottom:20px;border-bottom:3px dashed #B8860B}.ln{display:inline-block;background:linear-gradient(135deg,#B8860B,#8B6914);color:#fff;padding:8px 20px;border-radius:20px;font-size:16px;margin-bottom:10px}h1{color:#8B6914;font-size:36px;margin:10px 0}.sub{color:#B8860B;font-size:20px;margin-bottom:10px}.k{background:linear-gradient(135deg,#FFF8DC,#F0E68C);padding:15px;border-radius:12px;border-left:5px solid #8B6913;margin:15px 0;font-size:16px;line-height:1.8}.m{display:grid;grid-template-columns:2fr 1fr;gap:20px;margin-top:20px}.ma{background:linear-gradient(135deg,#FFF8DC,#FAEBD7);border-radius:15px;padding:20px;min-height:500px;border:3px solid #B8860B}.mt{text-align:center;color:#8B6914;font-size:22px;font-weight:bold;margin-bottom:15px}.m2{position:relative;width:100%;height:420px;background:linear-gradient(180deg,#DEB887,#8B7355);border-radius:10px;overflow:hidden;border:2px solid #fff}.c2{position:absolute;font-size:50px}.loc{position:absolute;background:#fff;border:3px solid #8B6914;border-radius:8px;padding:6px 10px;cursor:pointer;transition:all .3s;font-size:12px;box-shadow:0 4px 10px rgba(0,0,0,.2);text-align:center;min-width:70px}.loc:hover{transform:scale(1.1);background:#FFF8DC}.loc.found{background:#90EE90;border-color:#228B22}.p{background:#fff;border-radius:15px;padding:20px;box-shadow:0 4px 15px rgba(0,0,0,.1)}.p h3{color:#8B6914;margin-bottom:15px;border-bottom:2px dashed #B8860B;padding-bottom:8px}.cg{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:15px}.cd{background:linear-gradient(135deg,#FFF8DC,#F0E68C);border:2px solid #B8860B;border-radius:8px;padding:10px;text-align:center;cursor:pointer;transition:all .3s;font-size:12px;min-height:70px;display:flex;flex-direction:column;justify-content:center;align-items:center}.cd:hover{transform:translateY(-3px);box-shadow:0 5px 15px rgba(184,134,11,.3)}.cd .e{font-size:24px;margin-bottom:5px}.cd.used{opacity:.4}.cd.correct{background:#90EE90;border-color:#228B22}.ib{background:#FFF8DC;padding:10px;border-radius:8px;margin-top:10px;font-size:14px;line-height:1.6}.b{background:linear-gradient(135deg,#B8860B,#8B6914);color:#fff;border:none;padding:10px 20px;border-radius:20px;cursor:pointer;font-size:14px;margin:5px}.ctl{display:flex;justify-content:center;gap:10px;margin-top:15px}.bd{display:inline-block;background:#B8860B;color:#fff;padding:5px 12px;border-radius:12px;font-size:14px;font-weight:bold;margin:3px}.tl{background:#fff;padding:15px;border-radius:12px;margin-top:20px;border:2px solid #B8860B}.tl h3{color:#8B6914;margin-bottom:10px}.tl ol{padding-left:25px;line-height:1.8}.fb{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:linear-gradient(135deg,#8B6914,#B8860B);color:#fff;padding:30px 50px;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,.3);font-size:28px;z-index:1000;display:none;text-align:center}.fb.show{display:block;animation:bounce .5s}@keyframes bounce{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.2)}}</style></head>
+<body><div class="c">
+<div class="h"><span class="ln">第 4 课 · 基础概念</span><h1>📦 仓库管理员机器人</h1><div class="sub">存储是什么 = 把信息放进格子里</div>
+<div class="k"><strong>🎯 核心知识：</strong>存储就是把信息乖乖放进格子里；格子=记忆位置；容量=格子的总数量。</div></div>
+<div class="m">
+<div class="ma"><div class="mt">🗺️ 仓库格子墙地图（点击格子）</div>
+<div class="m2" id="map">
+<div class="c2" style="top:5%;left:3%">🧒</div><div class="c2" style="top:5%;left:15%">🤖</div>
+<div class="c2" style="top:20%;left:5%">🤖</div>
+<div style="position:absolute;top:30%;left:30%;width:50%;height:50%;background:repeating-linear-gradient(0deg,transparent,transparent 28px,rgba(0,0,0,.2) 28px,rgba(0,0,0,.2) 30px),repeating-linear-gradient(90deg,transparent,transparent 55px,rgba(0,0,0,.2) 55px,rgba(0,0,0,.2) 57px),rgba(255,255,255,.3);border:2px solid #8B6914;border-radius:5px"></div>
+<div class="loc" style="top:30%;left:30%" data-id="A1" onclick="findLoc(this)">A1</div>
+<div class="loc" style="top:30%;left:39%" data-id="A2" onclick="findLoc(this)">A2</div>
+<div class="loc" style="top:30%;left:48%" data-id="A3" onclick="findLoc(this)">A3</div>
+<div class="loc" style="top:30%;left:57%" data-id="A4" onclick="findLoc(this)">A4</div>
+<div class="loc" style="top:39%;left:30%" data-id="B1" onclick="findLoc(this)">B1</div>
+<div class="loc" style="top:39%;left:39%" data-id="B2" onclick="findLoc(this)">B2</div>
+<div class="loc" style="top:39%;left:48%" data-id="B3" onclick="findLoc(this)">B3</div>
+<div class="loc" style="top:39%;left:57%" data-id="B4" onclick="findLoc(this)">B4</div>
+<div class="loc" style="top:48%;left:30%" data-id="C1" onclick="findLoc(this)">C1</div>
+<div class="loc" style="top:48%;left:39%" data-id="C2" onclick="findLoc(this)">C2</div>
+<div class="loc" style="top:48%;left:48%" data-id="C3" onclick="findLoc(this)">C3</div>
+<div class="loc" style="top:48%;left:57%" data-id="C4" onclick="findLoc(this)">C4</div>
+<div class="loc" style="top:10%;right:5%" data-id="X1" onclick="findLoc(this)">📊容量24</div>
+</div></div>
+<div>
+<div class="p"><h3>🎴 找找乐卡牌</h3>
+<div class="cg" id="cards">
+<div class="cd" data-id="A1" onclick="checkCard(this)"><div class="e">📦</div><div>找A1格子</div></div>
+<div class="cd" data-id="A4" onclick="checkCard(this)"><div class="e">📦</div><div>找A4格子</div></div>
+<div class="cd" data-id="B1" onclick="checkCard(this)"><div class="e">📦</div><div>找B1格子</div></div>
+<div class="cd" data-id="B4" onclick="checkCard(this)"><div class="e">📦</div><div>找B4格子</div></div>
+<div class="cd" data-id="C2" onclick="checkCard(this)"><div class="e">📦</div><div>找C2格子</div></div>
+<div class="cd" data-id="C3" onclick="checkCard(this)"><div class="e">📦</div><div>找C3格子</div></div>
+<div class="cd" data-id="X1" onclick="checkCard(this)"><div class="e">📊</div><div>找容量</div></div>
+<div class="cd" data-id="A3" onclick="checkCard(this)"><div class="e">📦</div><div>找A3格子</div></div>
+</div>
+<div class="ib"><strong>💡 玩法：</strong>仓库管理员要把物品卡放进对应编号的格子！<br>1. 看卡牌找格子编号<br>2. 点击地图上对应格子<br>3. 把12张物品卡全部入库！</div>
+<div class="ctl"><button class="b" onclick="resetGame()">🔄 重置</button><button class="b" onclick="showHint()">💡 提示</button></div>
+<div style="margin-top:15px"><strong>🏆 进度：</strong> <span id="prog">0/8</span><div id="badges" style="margin-top:5px"></div></div>
+</div>
+<div class="tl"><h3>📚 互动流程</h3><ol><li><strong>认识仓库</strong>：格子墙+容量=24</li><li><strong>送货入库</strong>：贴编号→放对应格子</li><li><strong>取货挑战</strong>：说地址→揭物品</li><li><strong>容量满</strong>：装不下需要压缩</li></ol></div>
+</div></div></div>
+<div class="fb" id="fb"></div>
+<script>let cnt=0,total=8;function findLoc(el){if(el.dataset.found==="true")return;el.dataset.found="true";el.classList.add("found");showFb("✅ 找到了！");chk()}function checkCard(c){if(c.classList.contains("used"))return;const id=c.dataset.id;const loc=document.querySelector(`.loc[data-id="${id}"]`);if(loc&&loc.dataset.found==="true"){c.classList.add("used","correct");cnt++;upd();showFb("🎉 答对了！")}else{showFb("❌ 先在地图上找到！")}}function showFb(m){const f=document.getElementById("fb");f.textContent=m;f.classList.add("show");setTimeout(()=>f.classList.remove("show"),1500)}function upd(){document.getElementById("prog").textContent=`${cnt}/${total}`;const b=["📦","📊","💡","🏆"];document.getElementById("badges").innerHTML=Array(Math.min(cnt,4)).fill().map((_,i)=>`<span class="bd">${b[i]}</span>`).join("")}function chk(){const f=document.querySelectorAll('.loc[data-found="true"]').length;if(f>=6)setTimeout(()=>showFb("🎊 仓库入库完成！"),500)}function resetGame(){cnt=0;document.querySelectorAll('.loc').forEach(e=>{e.dataset.found="false";e.classList.remove("found")});document.querySelectorAll('.cd').forEach(c=>c.classList.remove("used","correct"));upd();showFb("🔄 重置！")}function showHint(){showFb("💡 提示：找格子编号！")}</script>
+</body></html>
