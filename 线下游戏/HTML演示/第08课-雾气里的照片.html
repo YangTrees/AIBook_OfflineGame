@@ -1,4 +1,299 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>第8课《雾气里的照片》</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:"Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#D3D3D3,#F5F5F5);min-height:100vh;padding:20px}.c{max-width:1400px;margin:0 auto;background:rgba(255,255,255,.95);border-radius:20px;padding:30px;box-shadow:0 10px 40px rgba(0,0,0,.1)}.h{text-align:center;margin-bottom:20px;padding-bottom:20px;border-bottom:3px dashed #708090}.ln{display:inline-block;background:linear-gradient(135deg,#708090,#A9A9A9);color:#fff;padding:8px 20px;border-radius:20px;font-size:16px;margin-bottom:10px}h1{color:#708090;font-size:36px;margin:10px 0;text-shadow:0 0 5px rgba(112,128,144,.5)}.sub{color:#A9A9A9;font-size:20px;margin-bottom:10px}.k{background:linear-gradient(135deg,#F5F5F5,#E0E0E0);padding:15px;border-radius:12px;border-left:5px solid #708090;margin:15px 0;font-size:16px;line-height:1.8}.m{display:grid;grid-template-columns:2fr 1fr;gap:20px;margin-top:20px}.ma{background:linear-gradient(135deg,#E0E0E0,#F5F5F5);border-radius:15px;padding:20px;min-height:500px;border:3px solid #708090}.mt{text-align:center;color:#708090;font-size:22px;font-weight:bold;margin-bottom:15px}.m2{position:relative;width:100%;height:420px;background:linear-gradient(180deg,#A9A9A9,#696969);border-radius:10px;overflow:hidden;border:2px solid #fff;filter:blur(0.5px)}.m2::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at center,rgba(255,255,255,.2) 0%,rgba(255,255,255,0) 70%)}.fog{position:absolute;background:radial-gradient(circle,rgba(255,255,255,.6) 0%,rgba(255,255,255,.1) 70%);border-radius:50%;pointer-events:none}.fog1{width:200px;height:150px;top:10%;left:10%}.fog2{width:180px;height:130px;top:50%;left:50%}.photo{position:absolute;background:#fff;border:8px solid #fff;box-shadow:0 4px 15px rgba(0,0,0,.3);transition:all .3s;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:40px}.photo:hover{transform:scale(1.1)}.photo.fuzzy{filter:blur(6px) contrast(.7)}.photo.clear{filter:blur(0)}.photo1{top:15%;left:10%;width:100px;height:120px}.photo2{top:50%;left:25%;width:100px;height:120px}.photo3{top:20%;right:15%;width:100px;height:120px}.photo4{top:55%;right:15%;width:100px;height:120px}.btn-noise{position:absolute;background:rgba(105,105,105,.8);color:#fff;padding:5px 10px;border-radius:15px;cursor:pointer;font-size:12px;border:2px solid #fff}.n1{top:10%;right:30%}.n2{top:75%;left:45%}.c2{position:absolute;font-size:50px}.lab{position:absolute;background:rgba(255,255,255,.9);padding:5px 10px;border-radius:15px;font-size:11px;font-weight:bold;box-shadow:0 2px 5px rgba(0,0,0,.2)}.lab1{top:30%;left:13%}.lab2{top:65%;left:28%}.lab3{top:35%;right:18%}.lab4{top:70%;right:18%}.loc{position:absolute;background:rgba(255,255,255,.95);border:3px solid #708090;border-radius:10px;padding:6px 10px;cursor:pointer;transition:all .3s;font-size:12px;box-shadow:0 4px 10px rgba(0,0,0,.2);text-align:center;min-width:80px}.loc:hover{transform:scale(1.1);background:#F5F5F5}.loc.found{background:#90EE90;border-color:#228B22}.p{background:#fff;border-radius:15px;padding:20px;box-shadow:0 4px 15px rgba(0,0,0,.1)}.p h3{color:#708090;margin-bottom:15px;border-bottom:2px dashed #A9A9A9;padding-bottom:8px}.cg{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:15px}.cd{background:linear-gradient(135deg,#F5F5F5,#E0E0E0);border:2px solid #708090;border-radius:8px;padding:10px;text-align:center;cursor:pointer;transition:all .3s;font-size:12px;min-height:70px;display:flex;flex-direction:column;justify-content:center;align-items:center}.cd:hover{transform:translateY(-3px)}.cd .e{font-size:24px;margin-bottom:5px}.cd.used{opacity:.4}.cd.correct{background:#90EE90;border-color:#228B22}.ib{background:#F5F5F5;padding:10px;border-radius:8px;margin-top:10px;font-size:14px;line-height:1.6}.b{background:linear-gradient(135deg,#708090,#A9A9A9);color:#fff;border:none;padding:10px 20px;border-radius:20px;cursor:pointer;font-size:14px;margin:5px;font-weight:bold}.ctl{display:flex;justify-content:center;gap:10px;margin-top:15px}.bd{display:inline-block;background:#708090;color:#fff;padding:5px 12px;border-radius:12px;font-size:14px;font-weight:bold;margin:3px}.tl{background:#fff;padding:15px;border-radius:12px;margin-top:20px;border:2px solid #A9A9A9}.tl h3{color:#708090;margin-bottom:10px}.tl ol{padding-left:25px;line-height:1.8}.fb{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:linear-gradient(135deg,#708090,#A9A9A9);color:#fff;padding:30px 50px;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,.3);font-size:28px;z-index:1000;display:none;text-align:center;font-weight:bold}.fb.show{display:block;animation:bounce .5s}@keyframes bounce{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.2)}}</style></head>
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>第8课《雾气里的照片》</title><style>
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box }
+body {
+  font-family:"Microsoft YaHei",sans-serif;
+  background:linear-gradient(135deg,#D3D3D3,#F5F5F5);
+  min-height:100vh;
+  padding:20px }
+.c {
+  max-width:1400px;
+  margin:0 auto;
+  background:rgba(255,255,255,.95);
+  border-radius:20px;
+  padding:30px;
+  box-shadow:0 10px 40px rgba(0,0,0,.1) }
+.h {
+  text-align:center;
+  margin-bottom:20px;
+  padding-bottom:20px;
+  border-bottom:3px dashed #708090 }
+.ln {
+  display:inline-block;
+  background:linear-gradient(135deg,#708090,#A9A9A9);
+  color:#fff;
+  padding:8px 20px;
+  border-radius:20px;
+  font-size:16px;
+  margin-bottom:10px }
+h1 {
+  color:#708090;
+  font-size:36px;
+  margin:10px 0;
+  text-shadow:0 0 5px rgba(112,128,144,.5) }
+.sub {
+  color:#A9A9A9;
+  font-size:20px;
+  margin-bottom:10px }
+.k {
+  background:linear-gradient(135deg,#F5F5F5,#E0E0E0);
+  padding:15px;
+  border-radius:12px;
+  border-left:5px solid #708090;
+  margin:15px 0;
+  font-size:16px;
+  line-height:1.8 }
+.m {
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:20px;
+  margin-top:20px }
+.ma {
+  background:linear-gradient(135deg,#E0E0E0,#F5F5F5);
+  border-radius:15px;
+  padding:20px;
+  min-height:500px;
+  border:3px solid #708090 }
+.mt {
+  text-align:center;
+  color:#708090;
+  font-size:22px;
+  font-weight:bold;
+  margin-bottom:15px }
+.m2 {
+  position:relative;
+  width:100%;
+  height:420px;
+  background:linear-gradient(180deg,#A9A9A9,#696969);
+  border-radius:10px;
+  overflow:hidden;
+  border:2px solid #fff;
+  filter:blur(0.5px) }
+.m2::before {
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background:radial-gradient(ellipse at center,rgba(255,255,255,.2) 0%,rgba(255,255,255,0) 70%) }
+.fog {
+  position:absolute;
+  background:radial-gradient(circle,rgba(255,255,255,.6) 0%,rgba(255,255,255,.1) 70%);
+  border-radius:50%;
+  pointer-events:none }
+.fog1 {
+  width:200px;
+  height:150px;
+  top:10%;
+  left:10% }
+.fog2 {
+  width:180px;
+  height:130px;
+  top:50%;
+  left:50% }
+.photo {
+  position:absolute;
+  background:#fff;
+  border:8px solid #fff;
+  box-shadow:0 4px 15px rgba(0,0,0,.3);
+  transition:all .3s;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:40px }
+.photo:hover {
+  transform:scale(1.1) }
+.photo.fuzzy {
+  filter:blur(6px) contrast(.7) }
+.photo.clear {
+  filter:blur(0) }
+.photo1 {
+  top:15%;
+  left:10%;
+  width:100px;
+  height:120px }
+.photo2 {
+  top:50%;
+  left:25%;
+  width:100px;
+  height:120px }
+.photo3 {
+  top:20%;
+  right:15%;
+  width:100px;
+  height:120px }
+.photo4 {
+  top:55%;
+  right:15%;
+  width:100px;
+  height:120px }
+.btn-noise {
+  position:absolute;
+  background:rgba(105,105,105,.8);
+  color:#fff;
+  padding:5px 10px;
+  border-radius:15px;
+  cursor:pointer;
+  font-size:12px;
+  border:2px solid #fff }
+.n1 {
+  top:10%;
+  right:30% }
+.n2 {
+  top:75%;
+  left:45% }
+.c2 {
+  position:absolute;
+  font-size:50px }
+.lab {
+  position:absolute;
+  background:rgba(255,255,255,.9);
+  padding:5px 10px;
+  border-radius:15px;
+  font-size:11px;
+  font-weight:bold;
+  box-shadow:0 2px 5px rgba(0,0,0,.2) }
+.lab1 {
+  top:30%;
+  left:13% }
+.lab2 {
+  top:65%;
+  left:28% }
+.lab3 {
+  top:35%;
+  right:18% }
+.lab4 {
+  top:70%;
+  right:18% }
+.loc {
+  position:absolute;
+  background:rgba(255,255,255,.95);
+  border:3px solid #708090;
+  border-radius:10px;
+  padding:6px 10px;
+  cursor:pointer;
+  transition:all .3s;
+  font-size:12px;
+  box-shadow:0 4px 10px rgba(0,0,0,.2);
+  text-align:center;
+  min-width:80px }
+.loc:hover {
+  transform:scale(1.1);
+  background:#F5F5F5 }
+.loc.found {
+  background:#90EE90;
+  border-color:#228B22 }
+.p {
+  background:#fff;
+  border-radius:15px;
+  padding:20px;
+  box-shadow:0 4px 15px rgba(0,0,0,.1) }
+.p h3 {
+  color:#708090;
+  margin-bottom:15px;
+  border-bottom:2px dashed #A9A9A9;
+  padding-bottom:8px }
+.cg {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  margin-bottom:15px }
+.cd {
+  background:linear-gradient(135deg,#F5F5F5,#E0E0E0);
+  border:2px solid #708090;
+  border-radius:8px;
+  padding:10px;
+  text-align:center;
+  cursor:pointer;
+  transition:all .3s;
+  font-size:12px;
+  min-height:70px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center }
+.cd:hover {
+  transform:translateY(-3px) }
+.cd .e {
+  font-size:24px;
+  margin-bottom:5px }
+.cd.used {
+  opacity:.4 }
+.cd.correct {
+  background:#90EE90;
+  border-color:#228B22 }
+.ib {
+  background:#F5F5F5;
+  padding:10px;
+  border-radius:8px;
+  margin-top:10px;
+  font-size:14px;
+  line-height:1.6 }
+.b {
+  background:linear-gradient(135deg,#708090,#A9A9A9);
+  color:#fff;
+  border:none;
+  padding:10px 20px;
+  border-radius:20px;
+  cursor:pointer;
+  font-size:14px;
+  margin:5px;
+  font-weight:bold }
+.ctl {
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:15px }
+.bd {
+  display:inline-block;
+  background:#708090;
+  color:#fff;
+  padding:5px 12px;
+  border-radius:12px;
+  font-size:14px;
+  font-weight:bold;
+  margin:3px }
+.tl {
+  background:#fff;
+  padding:15px;
+  border-radius:12px;
+  margin-top:20px;
+  border:2px solid #A9A9A9 }
+.tl h3 {
+  color:#708090;
+  margin-bottom:10px }
+.tl ol {
+  padding-left:25px;
+  line-height:1.8 }
+.fb {
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  background:linear-gradient(135deg,#708090,#A9A9A9);
+  color:#fff;
+  padding:30px 50px;
+  border-radius:20px;
+  box-shadow:0 20px 60px rgba(0,0,0,.3);
+  font-size:28px;
+  z-index:1000;
+  display:none;
+  text-align:center;
+  font-weight:bold }
+.fb.show {
+  display:block;
+  animation:bounce .5s }
+@keyframes bounce {
+  0%,100% {
+    transform:translate(-50%,-50%) scale(1) }
+  50% {
+    transform:translate(-50%,-50%) scale(1.2) }
+}
+</style></head>
 <body><div class="c">
 <div class="h"><span class="ln">第 8 课 · 基础概念</span><h1>🌫️ 雾气里的照片</h1><div class="sub">噪声是什么 = 干扰信号</div>
 <div class="k"><strong>🎯 核心知识：</strong>噪声是混在信息里的干扰，让信息变模糊、不清晰。AI也会被噪声影响。垃圾进，垃圾出！</div></div>
@@ -38,14 +333,96 @@
 <div class="tl"><h3>📚 互动流程</h3><ol><li><strong>发现噪声</strong>：雾气让照片模糊</li><li><strong>去噪实验</strong>：磨砂片让照片变清晰</li><li><strong>声音噪声</strong>：嘈杂环境听不清</li><li><strong>AI被影响</strong>：垃圾进，垃圾出</li></ol></div>
 </div></div></div>
 <div class="fb" id="fb"></div>
-<script>let cnt=0,total=8,clearedCount=0;
-function findLoc(el){if(el.dataset.found==="true")return;el.dataset.found="true";el.classList.add("found");showFb("✅ 找到了！");chk()}
-function checkCard(c){if(c.classList.contains("used"))return;const id=c.dataset.id;const loc=document.querySelector(`.loc[data-id="${id}"]`);if(loc&&loc.dataset.found==="true"){c.classList.add("used","correct");cnt++;upd();showFb("🎉 答对了！")}else{showFb("❌ 先在地图上找到！")}}
-function showFb(m){const f=document.getElementById("fb");f.textContent=m;f.classList.add("show");setTimeout(()=>f.classList.remove("show"),1500)}
-function upd(){document.getElementById("prog").textContent=`${cnt}/${total}`;const b=["🌫️","✨","🔍","🏆"];document.getElementById("badges").innerHTML=Array(Math.min(cnt,4)).fill().map((_,i)=>`<span class="bd">${b[i]}</span>`).join("")}
-function chk(){const f=document.querySelectorAll('.loc[data-found="true"]').length;if(f>=4)setTimeout(()=>showFb("🎊 雾气小镇找全！"),500)}
-function clearPhoto(el){if(!el.classList.contains('fuzzy'))return;el.classList.remove('fuzzy');el.classList.add('clear');clearedCount++;document.getElementById("cleared").textContent=clearedCount;showFb("✨ 照片变清晰了！");if(clearedCount>=4)showFb("🎉 全部去噪完成！")}
-function addNoise(){document.querySelectorAll('.photo').forEach(p=>{p.classList.add('fuzzy');p.classList.remove('clear')});clearedCount=0;document.getElementById("cleared").textContent="0";document.getElementById("status").textContent="已加噪点";showFb("🌫️ 噪点增加！")}
-function denoise(){document.querySelectorAll('.photo').forEach(p=>{p.classList.remove('fuzzy');p.classList.add('clear')});clearedCount=4;document.getElementById("cleared").textContent="4";document.getElementById("status").textContent="已去噪";showFb("✨ 一键去噪！")}
-function resetGame(){cnt=0;clearedCount=0;document.getElementById("cleared").textContent="0";document.getElementById("status").textContent="已加噪点";document.querySelectorAll('.loc').forEach(e=>{e.dataset.found="false";e.classList.remove("found")});document.querySelectorAll('.cd').forEach(c=>c.classList.remove("used","correct"));document.querySelectorAll('.photo').forEach(p=>{p.classList.add('fuzzy');p.classList.remove('clear')});upd();showFb("🔄 重置！")}</script>
+<script>
+let cnt=0,total=8,clearedCount=0;
+function findLoc(el){
+  if(el.dataset.found==="true")return;
+  el.dataset.found="true";
+  el.classList.add("found");
+  showFb("✅ 找到了！");
+  chk()
+}
+function checkCard(c){
+  if(c.classList.contains("used"))return;
+  const id=c.dataset.id;
+  const loc=document.querySelector(`.loc[data-id="${
+    id
+  }"]`);
+  if(loc&&loc.dataset.found==="true"){
+    c.classList.add("used","correct");
+    cnt++;
+    upd();
+    showFb("🎉 答对了！")
+  }else{
+    showFb("❌ 先在地图上找到！")
+  }
+}
+function showFb(m){
+  const f=document.getElementById("fb");
+  f.textContent=m;
+  f.classList.add("show");
+  setTimeout(()=>f.classList.remove("show"),1500)
+}
+function upd(){
+  document.getElementById("prog").textContent=`${
+    cnt
+  }/${
+    total
+  }`;
+  const b=["🌫️","✨","🔍","🏆"];
+  document.getElementById("badges").innerHTML=Array(Math.min(cnt,4)).fill().map((_,i)=>`<span class="bd">${
+    b[i]
+  }</span>`).join("")
+}
+function chk(){
+  const f=document.querySelectorAll('.loc[data-found="true"]').length;
+  if(f>=4)setTimeout(()=>showFb("🎊 雾气小镇找全！"),500)
+}
+function clearPhoto(el){
+  if(!el.classList.contains('fuzzy'))return;
+  el.classList.remove('fuzzy');
+  el.classList.add('clear');
+  clearedCount++;
+  document.getElementById("cleared").textContent=clearedCount;
+  showFb("✨ 照片变清晰了！");
+  if(clearedCount>=4)showFb("🎉 全部去噪完成！")
+}
+function addNoise(){
+  document.querySelectorAll('.photo').forEach(p=>{
+    p.classList.add('fuzzy');
+    p.classList.remove('clear')
+  });
+  clearedCount=0;
+  document.getElementById("cleared").textContent="0";
+  document.getElementById("status").textContent="已加噪点";
+  showFb("🌫️ 噪点增加！")
+}
+function denoise(){
+  document.querySelectorAll('.photo').forEach(p=>{
+    p.classList.remove('fuzzy');
+    p.classList.add('clear')
+  });
+  clearedCount=4;
+  document.getElementById("cleared").textContent="4";
+  document.getElementById("status").textContent="已去噪";
+  showFb("✨ 一键去噪！")
+}
+function resetGame(){
+  cnt=0;
+  clearedCount=0;
+  document.getElementById("cleared").textContent="0";
+  document.getElementById("status").textContent="已加噪点";
+  document.querySelectorAll('.loc').forEach(e=>{
+    e.dataset.found="false";
+    e.classList.remove("found")
+  });
+  document.querySelectorAll('.cd').forEach(c=>c.classList.remove("used","correct"));
+  document.querySelectorAll('.photo').forEach(p=>{
+    p.classList.add('fuzzy');
+    p.classList.remove('clear')
+  });
+  upd();
+  showFb("🔄 重置！")
+}
+</script>
 </body></html>

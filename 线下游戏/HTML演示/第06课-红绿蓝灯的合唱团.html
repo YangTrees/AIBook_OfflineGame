@@ -1,4 +1,299 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>第6课《红绿蓝灯的合唱团》</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:"Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#1a0033,#330066,#000033);min-height:100vh;padding:20px;color:#fff}.c{max-width:1400px;margin:0 auto;background:rgba(20,0,40,.85);border-radius:20px;padding:30px;box-shadow:0 10px 40px rgba(255,0,200,.3)}.h{text-align:center;margin-bottom:20px;padding-bottom:20px;border-bottom:3px dashed #FF00FF}.ln{display:inline-block;background:linear-gradient(90deg,#FF0000,#00FF00,#0000FF);color:#fff;padding:8px 20px;border-radius:20px;font-size:16px;margin-bottom:10px;font-weight:bold}h1{color:#FF00FF;font-size:36px;margin:10px 0;text-shadow:0 0 20px #FF00FF}.sub{color:#00FFFF;font-size:20px;margin-bottom:10px}.k{background:rgba(255,0,255,.1);padding:15px;border-radius:12px;border-left:5px solid #00FFFF;margin:15px 0;font-size:16px;line-height:1.8}.m{display:grid;grid-template-columns:2fr 1fr;gap:20px;margin-top:20px}.ma{background:rgba(0,0,30,.6);border-radius:15px;padding:20px;min-height:500px;border:2px solid #FF00FF}.mt{text-align:center;color:#00FFFF;font-size:22px;font-weight:bold;margin-bottom:15px;text-shadow:0 0 10px #00FFFF}.m2{position:relative;width:100%;height:420px;background:radial-gradient(ellipse at center,#1a0033 0%,#000000 100%);border-radius:10px;overflow:hidden}.m2::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background-image:radial-gradient(2px 2px at 20% 30%,#fff,transparent),radial-gradient(1px 1px at 60% 70%,#fff,transparent),radial-gradient(2px 2px at 80% 20%,#fff,transparent)}.spot{position:absolute;border-radius:50%;opacity:.7;animation:rotate 4s linear infinite}.spot-r{background:radial-gradient(circle,#ff0000,#880000);width:120px;height:120px;top:10%;left:20%}.spot-g{background:radial-gradient(circle,#00ff00,#008800);width:120px;height:120px;top:10%;left:50%}.spot-b{background:radial-gradient(circle,#0000ff,#000088);width:120px;height:120px;top:10%;left:80%}@keyframes rotate{0%{opacity:.4}50%{opacity:1}100%{opacity:.4}}.mix-box{position:absolute;width:100px;height:100px;top:50%;left:50%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,#fff,#FF00FF);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:bold;box-shadow:0 0 40px #FF00FF}.c2{position:absolute;font-size:50px;cursor:pointer}.btn-c{position:absolute;background:rgba(255,255,255,.2);border:2px solid #fff;border-radius:50%;width:50px;height:50px;display:flex;align-items:center;justify-content:center;font-size:20px;cursor:pointer;color:#fff;font-weight:bold}.btn-r{border-color:#FF0000}.btn-g{border-color:#00FF00}.btn-b{border-color:#0000FF}.loc{position:absolute;background:rgba(255,255,255,.1);border:2px solid #00FFFF;border-radius:10px;padding:8px 12px;cursor:pointer;transition:all .3s;font-size:13px;backdrop-filter:blur(5px);text-align:center;min-width:90px}.loc:hover{transform:scale(1.1);background:rgba(0,255,255,.3)}.loc.found{background:rgba(0,255,0,.5);border-color:#00FF00}.p{background:rgba(20,0,40,.6);border-radius:15px;padding:20px;border:1px solid #FF00FF}.p h3{color:#00FFFF;margin-bottom:15px;border-bottom:2px dashed #FF00FF;padding-bottom:8px}.color-mix{background:rgba(0,0,0,.5);padding:15px;border-radius:8px;margin:10px 0;border:1px solid #FF00FF}.color-show{display:flex;justify-content:space-around;margin-top:10px}.color-dot{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:bold;color:#fff;border:2px solid #fff;box-shadow:0 0 15px currentColor}.cd{background:linear-gradient(90deg,rgba(255,0,0,.3),rgba(0,255,0,.3),rgba(0,0,255,.3));border:2px solid #00FFFF;border-radius:8px;padding:10px;text-align:center;cursor:pointer;transition:all .3s;font-size:12px;min-height:60px}.cd:hover{transform:translateY(-3px)}.cd.used{opacity:.4}.cd.correct{background:rgba(0,255,0,.5);border-color:#00FF00}.cg{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:15px}.cd .e{font-size:24px;margin-bottom:3px}.ib{background:rgba(0,255,255,.1);padding:10px;border-radius:8px;margin-top:10px;font-size:13px;line-height:1.6;border:1px solid #00FFFF}.b{background:linear-gradient(90deg,#FF0000,#00FF00,#0000FF);color:#fff;border:none;padding:10px 20px;border-radius:20px;cursor:pointer;font-size:14px;margin:5px;font-weight:bold}.ctl{display:flex;justify-content:center;gap:10px;margin-top:15px}.bd{display:inline-block;background:linear-gradient(90deg,#FF0000,#00FF00,#0000FF);color:#fff;padding:5px 12px;border-radius:12px;font-size:14px;font-weight:bold;margin:3px}.tl{background:rgba(20,0,40,.6);padding:15px;border-radius:12px;margin-top:20px;border:1px solid #00FFFF}.tl h3{color:#00FFFF;margin-bottom:10px}.tl ol{padding-left:25px;line-height:1.8}.fb{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:linear-gradient(90deg,#FF0000,#00FF00,#0000FF);color:#fff;padding:30px 50px;border-radius:20px;box-shadow:0 20px 60px rgba(255,0,255,.5);font-size:28px;z-index:1000;display:none;text-align:center;font-weight:bold}.fb.show{display:block;animation:bounce .5s}@keyframes bounce{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.2)}}</style></head>
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>第6课《红绿蓝灯的合唱团》</title><style>
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box }
+body {
+  font-family:"Microsoft YaHei",sans-serif;
+  background:linear-gradient(135deg,#1a0033,#330066,#000033);
+  min-height:100vh;
+  padding:20px;
+  color:#fff }
+.c {
+  max-width:1400px;
+  margin:0 auto;
+  background:rgba(20,0,40,.85);
+  border-radius:20px;
+  padding:30px;
+  box-shadow:0 10px 40px rgba(255,0,200,.3) }
+.h {
+  text-align:center;
+  margin-bottom:20px;
+  padding-bottom:20px;
+  border-bottom:3px dashed #FF00FF }
+.ln {
+  display:inline-block;
+  background:linear-gradient(90deg,#FF0000,#00FF00,#0000FF);
+  color:#fff;
+  padding:8px 20px;
+  border-radius:20px;
+  font-size:16px;
+  margin-bottom:10px;
+  font-weight:bold }
+h1 {
+  color:#FF00FF;
+  font-size:36px;
+  margin:10px 0;
+  text-shadow:0 0 20px #FF00FF }
+.sub {
+  color:#00FFFF;
+  font-size:20px;
+  margin-bottom:10px }
+.k {
+  background:rgba(255,0,255,.1);
+  padding:15px;
+  border-radius:12px;
+  border-left:5px solid #00FFFF;
+  margin:15px 0;
+  font-size:16px;
+  line-height:1.8 }
+.m {
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:20px;
+  margin-top:20px }
+.ma {
+  background:rgba(0,0,30,.6);
+  border-radius:15px;
+  padding:20px;
+  min-height:500px;
+  border:2px solid #FF00FF }
+.mt {
+  text-align:center;
+  color:#00FFFF;
+  font-size:22px;
+  font-weight:bold;
+  margin-bottom:15px;
+  text-shadow:0 0 10px #00FFFF }
+.m2 {
+  position:relative;
+  width:100%;
+  height:420px;
+  background:radial-gradient(ellipse at center,#1a0033 0%,#000000 100%);
+  border-radius:10px;
+  overflow:hidden }
+.m2::before {
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background-image:radial-gradient(2px 2px at 20% 30%,#fff,transparent),radial-gradient(1px 1px at 60% 70%,#fff,transparent),radial-gradient(2px 2px at 80% 20%,#fff,transparent) }
+.spot {
+  position:absolute;
+  border-radius:50%;
+  opacity:.7;
+  animation:rotate 4s linear infinite }
+.spot-r {
+  background:radial-gradient(circle,#ff0000,#880000);
+  width:120px;
+  height:120px;
+  top:10%;
+  left:20% }
+.spot-g {
+  background:radial-gradient(circle,#00ff00,#008800);
+  width:120px;
+  height:120px;
+  top:10%;
+  left:50% }
+.spot-b {
+  background:radial-gradient(circle,#0000ff,#000088);
+  width:120px;
+  height:120px;
+  top:10%;
+  left:80% }
+@keyframes rotate {
+  0% {
+    opacity:.4 }
+  50% {
+    opacity:1 }
+  100% {
+    opacity:.4 }
+}
+.mix-box {
+  position:absolute;
+  width:100px;
+  height:100px;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  background:radial-gradient(circle,#fff,#FF00FF);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:14px;
+  font-weight:bold;
+  box-shadow:0 0 40px #FF00FF }
+.c2 {
+  position:absolute;
+  font-size:50px;
+  cursor:pointer }
+.btn-c {
+  position:absolute;
+  background:rgba(255,255,255,.2);
+  border:2px solid #fff;
+  border-radius:50%;
+  width:50px;
+  height:50px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+  cursor:pointer;
+  color:#fff;
+  font-weight:bold }
+.btn-r {
+  border-color:#FF0000 }
+.btn-g {
+  border-color:#00FF00 }
+.btn-b {
+  border-color:#0000FF }
+.loc {
+  position:absolute;
+  background:rgba(255,255,255,.1);
+  border:2px solid #00FFFF;
+  border-radius:10px;
+  padding:8px 12px;
+  cursor:pointer;
+  transition:all .3s;
+  font-size:13px;
+  backdrop-filter:blur(5px);
+  text-align:center;
+  min-width:90px }
+.loc:hover {
+  transform:scale(1.1);
+  background:rgba(0,255,255,.3) }
+.loc.found {
+  background:rgba(0,255,0,.5);
+  border-color:#00FF00 }
+.p {
+  background:rgba(20,0,40,.6);
+  border-radius:15px;
+  padding:20px;
+  border:1px solid #FF00FF }
+.p h3 {
+  color:#00FFFF;
+  margin-bottom:15px;
+  border-bottom:2px dashed #FF00FF;
+  padding-bottom:8px }
+.color-mix {
+  background:rgba(0,0,0,.5);
+  padding:15px;
+  border-radius:8px;
+  margin:10px 0;
+  border:1px solid #FF00FF }
+.color-show {
+  display:flex;
+  justify-content:space-around;
+  margin-top:10px }
+.color-dot {
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+  font-weight:bold;
+  color:#fff;
+  border:2px solid #fff;
+  box-shadow:0 0 15px currentColor }
+.cd {
+  background:linear-gradient(90deg,rgba(255,0,0,.3),rgba(0,255,0,.3),rgba(0,0,255,.3));
+  border:2px solid #00FFFF;
+  border-radius:8px;
+  padding:10px;
+  text-align:center;
+  cursor:pointer;
+  transition:all .3s;
+  font-size:12px;
+  min-height:60px }
+.cd:hover {
+  transform:translateY(-3px) }
+.cd.used {
+  opacity:.4 }
+.cd.correct {
+  background:rgba(0,255,0,.5);
+  border-color:#00FF00 }
+.cg {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  margin-bottom:15px }
+.cd .e {
+  font-size:24px;
+  margin-bottom:3px }
+.ib {
+  background:rgba(0,255,255,.1);
+  padding:10px;
+  border-radius:8px;
+  margin-top:10px;
+  font-size:13px;
+  line-height:1.6;
+  border:1px solid #00FFFF }
+.b {
+  background:linear-gradient(90deg,#FF0000,#00FF00,#0000FF);
+  color:#fff;
+  border:none;
+  padding:10px 20px;
+  border-radius:20px;
+  cursor:pointer;
+  font-size:14px;
+  margin:5px;
+  font-weight:bold }
+.ctl {
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:15px }
+.bd {
+  display:inline-block;
+  background:linear-gradient(90deg,#FF0000,#00FF00,#0000FF);
+  color:#fff;
+  padding:5px 12px;
+  border-radius:12px;
+  font-size:14px;
+  font-weight:bold;
+  margin:3px }
+.tl {
+  background:rgba(20,0,40,.6);
+  padding:15px;
+  border-radius:12px;
+  margin-top:20px;
+  border:1px solid #00FFFF }
+.tl h3 {
+  color:#00FFFF;
+  margin-bottom:10px }
+.tl ol {
+  padding-left:25px;
+  line-height:1.8 }
+.fb {
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  background:linear-gradient(90deg,#FF0000,#00FF00,#0000FF);
+  color:#fff;
+  padding:30px 50px;
+  border-radius:20px;
+  box-shadow:0 20px 60px rgba(255,0,255,.5);
+  font-size:28px;
+  z-index:1000;
+  display:none;
+  text-align:center;
+  font-weight:bold }
+.fb.show {
+  display:block;
+  animation:bounce .5s }
+@keyframes bounce {
+  0%,100% {
+    transform:translate(-50%,-50%) scale(1) }
+  50% {
+    transform:translate(-50%,-50%) scale(1.2) }
+}
+</style></head>
 <body><div class="c">
 <div class="h"><span class="ln">第 6 课 · 基础概念</span><h1>🌈 红绿蓝灯的合唱团</h1><div class="sub">RGB = 红+绿+蓝 = 所有颜色</div>
 <div class="k"><strong>🎯 核心知识：</strong>RGB三原色：红+绿=黄，绿+蓝=青，红+蓝=紫，红+绿+蓝=白。颜色还能用数字配方（255,0,0）表示！</div></div>
@@ -41,15 +336,110 @@
 <div class="tl"><h3>📚 互动流程</h3><ol><li><strong>三精灵登场</strong>：红/绿/蓝小精灵</li><li><strong>滤光片实验</strong>：叠放看混色</li><li><strong>数字配方</strong>：R=255 G=255 B=0=黄</li><li><strong>6种混色</strong>：调出所有颜色！</li></ol></div>
 </div></div></div>
 <div class="fb" id="fb"></div>
-<script>let cnt=0,total=8;let rgb={r:255,g:0,b:0};let state={r:true,g:false,b:false};
-function findLoc(el){if(el.dataset.found==="true")return;el.dataset.found="true";el.classList.add("found");showFb("✅ 找到了！");chk()}
-function checkCard(c){if(c.classList.contains("used"))return;const id=c.dataset.id;const loc=document.querySelector(`.loc[data-id="${id}"]`);if(loc&&loc.dataset.found==="true"){c.classList.add("used","correct");cnt++;upd();showFb("🎉 答对了！")}else{showFb("❌ 先在地图上找到！")}}
-function showFb(m){const f=document.getElementById("fb");f.textContent=m;f.classList.add("show");setTimeout(()=>f.classList.remove("show"),1500)}
-function upd(){document.getElementById("prog").textContent=`${cnt}/${total}`;const b=["🔴","🟢","🔵","⚪"];document.getElementById("badges").innerHTML=Array(Math.min(cnt,4)).fill().map((_,i)=>`<span class="bd">${b[i]}</span>`).join("")}
-function chk(){const f=document.querySelectorAll('.loc[data-found="true"]').length;if(f>=4)setTimeout(()=>showFb("🎊 RGB全部找到！"),500)}
-function toggle(c){state[c]=!state[c];updateColor();showFb(`${c.toUpperCase()}=${state[c]?"ON":"OFF"}`)}
-function updateColor(){rgb.r=state.r?255:0;rgb.g=state.g?255:0;rgb.b=state.b?255:0;document.getElementById("rv").textContent=rgb.r;document.getElementById("gv").textContent=rgb.g;document.getElementById("bv").textContent=rgb.b;const c=`rgb(${rgb.r},${rgb.g},${rgb.b})`;document.getElementById("cd").style.background=c;document.getElementById("mix").style.background=c}
-function mix(){let r=Math.random()>.5?255:0,g=Math.random()>.5?255:0,b=Math.random()>.5?255:0;rgb={r,g,b};state={r:r>0,g:g>0,b:b>0};updateColor();showFb("🎲 随机配方！")}
-function resetGame(){cnt=0;document.querySelectorAll('.loc').forEach(e=>{e.dataset.found="false";e.classList.remove("found")});document.querySelectorAll('.cd').forEach(c=>c.classList.remove("used","correct"));state={r:true,g:false,b:false};rgb={r:255,g:0,b:0};updateColor();upd();showFb("🔄 重置！")}
+<script>
+let cnt=0,total=8;
+let rgb={
+  r:255,g:0,b:0
+};
+let state={
+  r:true,g:false,b:false
+};
+function findLoc(el){
+  if(el.dataset.found==="true")return;
+  el.dataset.found="true";
+  el.classList.add("found");
+  showFb("✅ 找到了！");
+  chk()
+}
+function checkCard(c){
+  if(c.classList.contains("used"))return;
+  const id=c.dataset.id;
+  const loc=document.querySelector(`.loc[data-id="${
+    id
+  }"]`);
+  if(loc&&loc.dataset.found==="true"){
+    c.classList.add("used","correct");
+    cnt++;
+    upd();
+    showFb("🎉 答对了！")
+  }else{
+    showFb("❌ 先在地图上找到！")
+  }
+}
+function showFb(m){
+  const f=document.getElementById("fb");
+  f.textContent=m;
+  f.classList.add("show");
+  setTimeout(()=>f.classList.remove("show"),1500)
+}
+function upd(){
+  document.getElementById("prog").textContent=`${
+    cnt
+  }/${
+    total
+  }`;
+  const b=["🔴","🟢","🔵","⚪"];
+  document.getElementById("badges").innerHTML=Array(Math.min(cnt,4)).fill().map((_,i)=>`<span class="bd">${
+    b[i]
+  }</span>`).join("")
+}
+function chk(){
+  const f=document.querySelectorAll('.loc[data-found="true"]').length;
+  if(f>=4)setTimeout(()=>showFb("🎊 RGB全部找到！"),500)
+}
+function toggle(c){
+  state[c]=!state[c];
+  updateColor();
+  showFb(`${
+    c.toUpperCase()
+  }=${
+    state[c]?"ON":"OFF"
+  }`)
+}
+function updateColor(){
+  rgb.r=state.r?255:0;
+  rgb.g=state.g?255:0;
+  rgb.b=state.b?255:0;
+  document.getElementById("rv").textContent=rgb.r;
+  document.getElementById("gv").textContent=rgb.g;
+  document.getElementById("bv").textContent=rgb.b;
+  const c=`rgb(${
+    rgb.r
+  },${
+    rgb.g
+  },${
+    rgb.b
+  })`;
+  document.getElementById("cd").style.background=c;
+  document.getElementById("mix").style.background=c
+}
+function mix(){
+  let r=Math.random()>.5?255:0,g=Math.random()>.5?255:0,b=Math.random()>.5?255:0;
+  rgb={
+    r,g,b
+  };
+  state={
+    r:r>0,g:g>0,b:b>0
+  };
+  updateColor();
+  showFb("🎲 随机配方！")
+}
+function resetGame(){
+  cnt=0;
+  document.querySelectorAll('.loc').forEach(e=>{
+    e.dataset.found="false";
+    e.classList.remove("found")
+  });
+  document.querySelectorAll('.cd').forEach(c=>c.classList.remove("used","correct"));
+  state={
+    r:true,g:false,b:false
+  };
+  rgb={
+    r:255,g:0,b:0
+  };
+  updateColor();
+  upd();
+  showFb("🔄 重置！")
+}
 </script>
 </body></html>

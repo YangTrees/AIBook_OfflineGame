@@ -1,4 +1,331 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>第23课《音量旋钮决定谁更重要》</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:"Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#191970,#000033);min-height:100vh;padding:20px;color:#fff}.c{max-width:1400px;margin:0 auto;background:rgba(0,0,30,.85);border-radius:20px;padding:30px;box-shadow:0 10px 40px rgba(255,215,0,.3);border:1px solid #FFD700}.h{text-align:center;margin-bottom:20px;padding-bottom:20px;border-bottom:3px dashed #FFD700}.ln{display:inline-block;background:linear-gradient(135deg,#FFD700,#FFA500);color:#000;padding:8px 20px;border-radius:20px;font-size:16px;margin-bottom:10px;font-weight:bold}h1{color:#FFD700;font-size:36px;margin:10px 0;text-shadow:0 0 20px rgba(255,215,0,.5)}.sub{color:#00FFFF;font-size:20px;margin-bottom:10px}.k{background:rgba(255,215,0,.1);padding:15px;border-radius:12px;border-left:5px solid #FFD700;margin:15px 0;font-size:16px;line-height:1.8}.m{display:grid;grid-template-columns:2fr 1fr;gap:20px;margin-top:20px}.ma{background:rgba(0,0,30,.6);border-radius:15px;padding:20px;min-height:500px;border:2px solid #FFD700}.mt{text-align:center;color:#FFD700;font-size:22px;font-weight:bold;margin-bottom:15px;text-shadow:0 0 10px #FFD700}.m2{position:relative;width:100%;height:420px;background:linear-gradient(180deg,#000020,#191970);border-radius:10px;overflow:hidden;border:2px solid #FFD700}.console{position:absolute;top:10%;left:10%;right:10%;bottom:20%;background:linear-gradient(180deg,#2F2F2F,#1a1a1a);border:3px solid #444;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:space-around;padding:10px}.knob{width:50px;height:80px;background:linear-gradient(90deg,#222,#1a1a1a);border:2px solid #555;border-radius:8px 8px 0 0;display:flex;flex-direction:column;align-items:center;cursor:pointer;transition:all .3s;position:relative}.knob:hover{transform:scale(1.1)}.knob::before{content:'';position:absolute;top:30%;left:50%;width:4px;height:30px;background:linear-gradient(180deg,#fff,#888);transform:translateX(-50%);border-radius:2px;transition:transform .3s;transform-origin:50% 100%}.knob::after{content:attr(data-label);position:absolute;bottom:-25px;left:50%;transform:translateX(-50%);font-size:11px;color:#fff;white-space:nowrap}.knob[data-level="5"]::before{transform:translateX(-50%) rotate(45deg)}.knob[data-level="4"]::before{transform:translateX(-50%) rotate(20deg)}.knob[data-level="3"]::before{transform:translateX(-50%) rotate(0deg)}.knob[data-level="2"]::before{transform:translateX(-50%) rotate(-20deg)}.knob[data-level="1"]::before{transform:translateX(-50%) rotate(-45deg)}.k-voice{background:linear-gradient(180deg,#FFD700,#FFA500)}.k-music{background:linear-gradient(180deg,#00FF00,#228B22)}.k-drum{background:linear-gradient(180deg,#FF6B6B,#DC143C)}.k-wind{background:linear-gradient(180deg,#87CEEB,#4682B4)}.mix{position:absolute;top:5%;right:5%;width:80px;height:80px;background:radial-gradient(circle,#FFD700,#FFA500);border:2px solid #FFD700;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:bold;color:#000;box-shadow:0 0 30px #FFD700}.c2{position:absolute;font-size:50px}.dj{position:absolute;bottom:5%;left:5%;font-size:50px}.balance{position:absolute;top:5%;left:50%;transform:translateX(-50%);width:200px;height:30px;background:linear-gradient(90deg,#000,#444);border-radius:15px;display:flex;align-items:center;justify-content:center;position:relative}.balance .arm{position:absolute;width:4px;height:40px;background:#FFD700;border-radius:2px;transition:all .3s;transform-origin:50% 100%;bottom:50%;left:50%}.loc{position:absolute;background:rgba(255,255,255,.1);border:2px solid #FFD700;border-radius:10px;padding:6px 10px;cursor:pointer;transition:all .3s;font-size:12px;backdrop-filter:blur(5px);text-align:center;min-width:80px}.loc:hover{transform:scale(1.1);background:rgba(255,215,0,.2)}.loc.found{background:rgba(255,215,0,.4);border-color:#00FF00}.p{background:rgba(20,20,40,.8);border-radius:15px;padding:20px;border:1px solid #FFD700}.p h3{color:#FFD700;margin-bottom:15px;border-bottom:2px dashed #FFA500;padding-bottom:8px}.data{background:rgba(255,215,0,.1);padding:10px;border-radius:8px;margin-bottom:10px;text-align:center;border:1px solid #FFD700}.data .big{font-size:32px;color:#00FF00;font-weight:bold}.cg{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:15px}.cd{background:rgba(255,215,0,.1);border:2px solid #FFD700;border-radius:8px;padding:10px;text-align:center;cursor:pointer;transition:all .3s;font-size:12px;min-height:70px;display:flex;flex-direction:column;justify-content:center;align-items:center}.cd:hover{transform:translateY(-3px);background:rgba(255,215,0,.2)}.cd .e{font-size:24px;margin-bottom:5px}.cd.used{opacity:.4}.cd.correct{background:rgba(0,255,0,.3);border-color:#00FF00}.ib{background:rgba(255,215,0,.1);padding:10px;border-radius:8px;margin-top:10px;font-size:13px;line-height:1.6;border:1px solid #FFD700}.b{background:linear-gradient(135deg,#FFD700,#FFA500);color:#000;border:none;padding:10px 20px;border-radius:20px;cursor:pointer;font-size:14px;margin:5px;font-weight:bold}.ctl{display:flex;justify-content:center;gap:10px;margin-top:15px}.bd{display:inline-block;background:linear-gradient(135deg,#FFD700,#FFA500);color:#000;padding:5px 12px;border-radius:12px;font-size:14px;font-weight:bold;margin:3px}.tl{background:rgba(20,20,40,.8);padding:15px;border-radius:12px;margin-top:20px;border:1px solid #FFD700}.tl h3{color:#FFD700;margin-bottom:10px}.tl ol{padding-left:25px;line-height:1.8}.fb{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:linear-gradient(135deg,#FFD700,#FFA500);color:#000;padding:30px 50px;border-radius:20px;box-shadow:0 20px 60px rgba(255,215,0,.5);font-size:28px;z-index:1000;display:none;text-align:center;font-weight:bold}.fb.show{display:block;animation:bounce .5s}@keyframes bounce{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.2)}}</style></head>
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>第23课《音量旋钮决定谁更重要》</title><style>
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box }
+body {
+  font-family:"Microsoft YaHei",sans-serif;
+  background:linear-gradient(135deg,#191970,#000033);
+  min-height:100vh;
+  padding:20px;
+  color:#fff }
+.c {
+  max-width:1400px;
+  margin:0 auto;
+  background:rgba(0,0,30,.85);
+  border-radius:20px;
+  padding:30px;
+  box-shadow:0 10px 40px rgba(255,215,0,.3);
+  border:1px solid #FFD700 }
+.h {
+  text-align:center;
+  margin-bottom:20px;
+  padding-bottom:20px;
+  border-bottom:3px dashed #FFD700 }
+.ln {
+  display:inline-block;
+  background:linear-gradient(135deg,#FFD700,#FFA500);
+  color:#000;
+  padding:8px 20px;
+  border-radius:20px;
+  font-size:16px;
+  margin-bottom:10px;
+  font-weight:bold }
+h1 {
+  color:#FFD700;
+  font-size:36px;
+  margin:10px 0;
+  text-shadow:0 0 20px rgba(255,215,0,.5) }
+.sub {
+  color:#00FFFF;
+  font-size:20px;
+  margin-bottom:10px }
+.k {
+  background:rgba(255,215,0,.1);
+  padding:15px;
+  border-radius:12px;
+  border-left:5px solid #FFD700;
+  margin:15px 0;
+  font-size:16px;
+  line-height:1.8 }
+.m {
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:20px;
+  margin-top:20px }
+.ma {
+  background:rgba(0,0,30,.6);
+  border-radius:15px;
+  padding:20px;
+  min-height:500px;
+  border:2px solid #FFD700 }
+.mt {
+  text-align:center;
+  color:#FFD700;
+  font-size:22px;
+  font-weight:bold;
+  margin-bottom:15px;
+  text-shadow:0 0 10px #FFD700 }
+.m2 {
+  position:relative;
+  width:100%;
+  height:420px;
+  background:linear-gradient(180deg,#000020,#191970);
+  border-radius:10px;
+  overflow:hidden;
+  border:2px solid #FFD700 }
+.console {
+  position:absolute;
+  top:10%;
+  left:10%;
+  right:10%;
+  bottom:20%;
+  background:linear-gradient(180deg,#2F2F2F,#1a1a1a);
+  border:3px solid #444;
+  border-radius:10px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-around;
+  padding:10px }
+.knob {
+  width:50px;
+  height:80px;
+  background:linear-gradient(90deg,#222,#1a1a1a);
+  border:2px solid #555;
+  border-radius:8px 8px 0 0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  cursor:pointer;
+  transition:all .3s;
+  position:relative }
+.knob:hover {
+  transform:scale(1.1) }
+.knob::before {
+  content:'';
+  position:absolute;
+  top:30%;
+  left:50%;
+  width:4px;
+  height:30px;
+  background:linear-gradient(180deg,#fff,#888);
+  transform:translateX(-50%);
+  border-radius:2px;
+  transition:transform .3s;
+  transform-origin:50% 100% }
+.knob::after {
+  content:attr(data-label);
+  position:absolute;
+  bottom:-25px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:11px;
+  color:#fff;
+  white-space:nowrap }
+.knob[data-level="5"]::before {
+  transform:translateX(-50%) rotate(45deg) }
+.knob[data-level="4"]::before {
+  transform:translateX(-50%) rotate(20deg) }
+.knob[data-level="3"]::before {
+  transform:translateX(-50%) rotate(0deg) }
+.knob[data-level="2"]::before {
+  transform:translateX(-50%) rotate(-20deg) }
+.knob[data-level="1"]::before {
+  transform:translateX(-50%) rotate(-45deg) }
+.k-voice {
+  background:linear-gradient(180deg,#FFD700,#FFA500) }
+.k-music {
+  background:linear-gradient(180deg,#00FF00,#228B22) }
+.k-drum {
+  background:linear-gradient(180deg,#FF6B6B,#DC143C) }
+.k-wind {
+  background:linear-gradient(180deg,#87CEEB,#4682B4) }
+.mix {
+  position:absolute;
+  top:5%;
+  right:5%;
+  width:80px;
+  height:80px;
+  background:radial-gradient(circle,#FFD700,#FFA500);
+  border:2px solid #FFD700;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:14px;
+  font-weight:bold;
+  color:#000;
+  box-shadow:0 0 30px #FFD700 }
+.c2 {
+  position:absolute;
+  font-size:50px }
+.dj {
+  position:absolute;
+  bottom:5%;
+  left:5%;
+  font-size:50px }
+.balance {
+  position:absolute;
+  top:5%;
+  left:50%;
+  transform:translateX(-50%);
+  width:200px;
+  height:30px;
+  background:linear-gradient(90deg,#000,#444);
+  border-radius:15px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative }
+.balance .arm {
+  position:absolute;
+  width:4px;
+  height:40px;
+  background:#FFD700;
+  border-radius:2px;
+  transition:all .3s;
+  transform-origin:50% 100%;
+  bottom:50%;
+  left:50% }
+.loc {
+  position:absolute;
+  background:rgba(255,255,255,.1);
+  border:2px solid #FFD700;
+  border-radius:10px;
+  padding:6px 10px;
+  cursor:pointer;
+  transition:all .3s;
+  font-size:12px;
+  backdrop-filter:blur(5px);
+  text-align:center;
+  min-width:80px }
+.loc:hover {
+  transform:scale(1.1);
+  background:rgba(255,215,0,.2) }
+.loc.found {
+  background:rgba(255,215,0,.4);
+  border-color:#00FF00 }
+.p {
+  background:rgba(20,20,40,.8);
+  border-radius:15px;
+  padding:20px;
+  border:1px solid #FFD700 }
+.p h3 {
+  color:#FFD700;
+  margin-bottom:15px;
+  border-bottom:2px dashed #FFA500;
+  padding-bottom:8px }
+.data {
+  background:rgba(255,215,0,.1);
+  padding:10px;
+  border-radius:8px;
+  margin-bottom:10px;
+  text-align:center;
+  border:1px solid #FFD700 }
+.data .big {
+  font-size:32px;
+  color:#00FF00;
+  font-weight:bold }
+.cg {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  margin-bottom:15px }
+.cd {
+  background:rgba(255,215,0,.1);
+  border:2px solid #FFD700;
+  border-radius:8px;
+  padding:10px;
+  text-align:center;
+  cursor:pointer;
+  transition:all .3s;
+  font-size:12px;
+  min-height:70px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center }
+.cd:hover {
+  transform:translateY(-3px);
+  background:rgba(255,215,0,.2) }
+.cd .e {
+  font-size:24px;
+  margin-bottom:5px }
+.cd.used {
+  opacity:.4 }
+.cd.correct {
+  background:rgba(0,255,0,.3);
+  border-color:#00FF00 }
+.ib {
+  background:rgba(255,215,0,.1);
+  padding:10px;
+  border-radius:8px;
+  margin-top:10px;
+  font-size:13px;
+  line-height:1.6;
+  border:1px solid #FFD700 }
+.b {
+  background:linear-gradient(135deg,#FFD700,#FFA500);
+  color:#000;
+  border:none;
+  padding:10px 20px;
+  border-radius:20px;
+  cursor:pointer;
+  font-size:14px;
+  margin:5px;
+  font-weight:bold }
+.ctl {
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:15px }
+.bd {
+  display:inline-block;
+  background:linear-gradient(135deg,#FFD700,#FFA500);
+  color:#000;
+  padding:5px 12px;
+  border-radius:12px;
+  font-size:14px;
+  font-weight:bold;
+  margin:3px }
+.tl {
+  background:rgba(20,20,40,.8);
+  padding:15px;
+  border-radius:12px;
+  margin-top:20px;
+  border:1px solid #FFD700 }
+.tl h3 {
+  color:#FFD700;
+  margin-bottom:10px }
+.tl ol {
+  padding-left:25px;
+  line-height:1.8 }
+.fb {
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  background:linear-gradient(135deg,#FFD700,#FFA500);
+  color:#000;
+  padding:30px 50px;
+  border-radius:20px;
+  box-shadow:0 20px 60px rgba(255,215,0,.5);
+  font-size:28px;
+  z-index:1000;
+  display:none;
+  text-align:center;
+  font-weight:bold }
+.fb.show {
+  display:block;
+  animation:bounce .5s }
+@keyframes bounce {
+  0%,100% {
+    transform:translate(-50%,-50%) scale(1) }
+  50% {
+    transform:translate(-50%,-50%) scale(1.2) }
+}
+</style></head>
 <body><div class="c">
 <div class="h"><span class="ln">第 23 课 · 机器学习</span><h1>🎛️ 音量旋钮决定谁更重要</h1><div class="sub">权重 = 每个输入的重要程度</div>
 <div class="k"><strong>🎯 核心知识：</strong>旋钮大=权重高=更重要。多个输入加权决定结果！</div></div>
@@ -44,14 +371,105 @@
 <div class="tl"><h3>📚 互动流程</h3><ol><li><strong>认识旋钮</strong>：4个声音</li><li><strong>调大权重</strong>：变重要</li><li><strong>调小噪声</strong>：变背景</li><li><strong>加权组合</strong>：最终结果</li></ol></div>
 </div></div></div>
 <div class="fb" id="fb"></div>
-<script>let cnt=0,total=8,weights={voice:3,music:2,drum:2,wind:1};
-function findLoc(el){if(el.dataset.found==="true")return;el.dataset.found="true";el.classList.add("found");showFb("✅ 找到了！");chk()}
-function checkCard(c){if(c.classList.contains("used"))return;const id=c.dataset.id;const loc=document.querySelector(`.loc[data-id="${id}"]`);if(loc&&loc.dataset.found==="true"){c.classList.add("used","correct");cnt++;upd();showFb("🎉 答对了！")}else{showFb("❌ 先在地图上找到！")}}
-function showFb(m){const f=document.getElementById("fb");f.textContent=m;f.classList.add("show");setTimeout(()=>f.classList.remove("show"),1500)}
-function upd(){document.getElementById("prog").textContent=`${cnt}/${total}`;const b=["🎛️","🎵","⚖️","🏆"];document.getElementById("badges").innerHTML=Array(Math.min(cnt,4)).fill().map((_,i)=>`<span class="bd">${b[i]}</span>`).join("")}
-function chk(){const f=document.querySelectorAll('.loc[data-found="true"]').length;if(f>=2)setTimeout(()=>showFb("🎊 调音室场景完成！"),500)}
-function clickKnob(k){let level=parseInt(k.dataset.level);level=level>=5?1:level+1;k.dataset.level=level;const name=k.dataset.name;if(weights[name]!==undefined){weights[name]=level;document.getElementById(name==='人声'?'voice':name==='伴奏'?'music':name==='鼓点'?'drum':'wind').textContent=level;updateBalance();showFb(`${name}权重：${level}`)}}
-function updateBalance(){const total=Object.values(weights).reduce((a,b)=>a+b,0);document.getElementById('total').textContent=total;const v=weights.voice;const angle=(v-3)*30;document.getElementById('arm').style.transform=`translateX(-50%) rotate(${angle}deg)`}
-function autoMix(){weights={voice:5,music:3,drum:2,wind:1};['voice','music','drum','wind'].forEach(n=>document.getElementById(n).textContent=weights[n]);updateBalance();document.querySelectorAll('.knob').forEach(k=>{if(k.dataset.name==='人声')k.dataset.level=5;else if(k.dataset.name==='伴奏'||k.dataset.name==='鼓点')k.dataset.level=3;else k.dataset.level=1});showFb("🎛️ 智能混音完成！")}
-function resetGame(){cnt=0;weights={voice:3,music:2,drum:2,wind:1};['voice','music','drum','wind'].forEach(n=>document.getElementById(n).textContent=weights[n]);updateBalance();document.querySelectorAll('.loc').forEach(e=>{e.dataset.found="false";e.classList.remove("found")});document.querySelectorAll('.cd').forEach(c=>c.classList.remove("used","correct"));upd();showFb("🔄 重置！")}</script>
+<script>
+let cnt=0,total=8,weights={
+  voice:3,music:2,drum:2,wind:1
+};
+function findLoc(el){
+  if(el.dataset.found==="true")return;
+  el.dataset.found="true";
+  el.classList.add("found");
+  showFb("✅ 找到了！");
+  chk()
+}
+function checkCard(c){
+  if(c.classList.contains("used"))return;
+  const id=c.dataset.id;
+  const loc=document.querySelector(`.loc[data-id="${
+    id
+  }"]`);
+  if(loc&&loc.dataset.found==="true"){
+    c.classList.add("used","correct");
+    cnt++;
+    upd();
+    showFb("🎉 答对了！")
+  }else{
+    showFb("❌ 先在地图上找到！")
+  }
+}
+function showFb(m){
+  const f=document.getElementById("fb");
+  f.textContent=m;
+  f.classList.add("show");
+  setTimeout(()=>f.classList.remove("show"),1500)
+}
+function upd(){
+  document.getElementById("prog").textContent=`${
+    cnt
+  }/${
+    total
+  }`;
+  const b=["🎛️","🎵","⚖️","🏆"];
+  document.getElementById("badges").innerHTML=Array(Math.min(cnt,4)).fill().map((_,i)=>`<span class="bd">${
+    b[i]
+  }</span>`).join("")
+}
+function chk(){
+  const f=document.querySelectorAll('.loc[data-found="true"]').length;
+  if(f>=2)setTimeout(()=>showFb("🎊 调音室场景完成！"),500)
+}
+function clickKnob(k){
+  let level=parseInt(k.dataset.level);
+  level=level>=5?1:level+1;
+  k.dataset.level=level;
+  const name=k.dataset.name;
+  if(weights[name]!==undefined){
+    weights[name]=level;
+    document.getElementById(name==='人声'?'voice':name==='伴奏'?'music':name==='鼓点'?'drum':'wind').textContent=level;
+    updateBalance();
+    showFb(`${
+      name
+    }权重：${
+      level
+    }`)
+  }
+}
+function updateBalance(){
+  const total=Object.values(weights).reduce((a,b)=>a+b,0);
+  document.getElementById('total').textContent=total;
+  const v=weights.voice;
+  const angle=(v-3)*30;
+  document.getElementById('arm').style.transform=`translateX(-50%) rotate(${
+    angle
+  }deg)`
+}
+function autoMix(){
+  weights={
+    voice:5,music:3,drum:2,wind:1
+  };
+  ['voice','music','drum','wind'].forEach(n=>document.getElementById(n).textContent=weights[n]);
+  updateBalance();
+  document.querySelectorAll('.knob').forEach(k=>{
+    if(k.dataset.name==='人声')k.dataset.level=5;
+    else if(k.dataset.name==='伴奏'||k.dataset.name==='鼓点')k.dataset.level=3;
+    else k.dataset.level=1
+  });
+  showFb("🎛️ 智能混音完成！")
+}
+function resetGame(){
+  cnt=0;
+  weights={
+    voice:3,music:2,drum:2,wind:1
+  };
+  ['voice','music','drum','wind'].forEach(n=>document.getElementById(n).textContent=weights[n]);
+  updateBalance();
+  document.querySelectorAll('.loc').forEach(e=>{
+    e.dataset.found="false";
+    e.classList.remove("found")
+  });
+  document.querySelectorAll('.cd').forEach(c=>c.classList.remove("used","correct"));
+  upd();
+  showFb("🔄 重置！")
+}
+</script>
 </body></html>

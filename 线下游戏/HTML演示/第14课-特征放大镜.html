@@ -1,4 +1,313 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>第14课《特征放大镜》</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:"Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#8B4513,#D2691E);min-height:100vh;padding:20px}.c{max-width:1400px;margin:0 auto;background:rgba(255,255,255,.95);border-radius:20px;padding:30px;box-shadow:0 10px 40px rgba(0,0,0,.1)}.h{text-align:center;margin-bottom:20px;padding-bottom:20px;border-bottom:3px dashed #8B4513}.ln{display:inline-block;background:linear-gradient(135deg,#8B4513,#A0522D);color:#fff;padding:8px 20px;border-radius:20px;font-size:16px;margin-bottom:10px}h1{color:#8B4513;font-size:36px;margin:10px 0}.sub{color:#A0522D;font-size:20px;margin-bottom:10px}.k{background:linear-gradient(135deg,#FFF8DC,#F5DEB3);padding:15px;border-radius:12px;border-left:5px solid #8B4513;margin:15px 0;font-size:16px;line-height:1.8}.m{display:grid;grid-template-columns:2fr 1fr;gap:20px;margin-top:20px}.ma{background:linear-gradient(135deg,#F5DEB3,#DEB887);border-radius:15px;padding:20px;min-height:500px;border:3px solid #8B4513}.mt{text-align:center;color:#8B4513;font-size:22px;font-weight:bold;margin-bottom:15px}.m2{position:relative;width:100%;height:420px;background:linear-gradient(180deg,#DEB887,#A0522D);border-radius:10px;overflow:hidden;border:2px solid #fff}.shelf{position:absolute;top:5%;left:5%;width:60px;height:90%;background:linear-gradient(180deg,#8B4513,#A0522D);border:2px solid #fff;display:flex;flex-direction:column;align-items:center;justify-content:space-around;padding:5px 0}.shelf-book{width:90%;height:15%;background:linear-gradient(90deg,#4169E1,#FF6B6B,#FFD700,#228B22);border-radius:2px;font-size:10px;color:#fff;display:flex;align-items:center;justify-content:center}.desk{position:absolute;bottom:5%;left:25%;right:5%;height:35%;background:linear-gradient(180deg,#A0522D,#8B4513);border:3px solid #654321;border-radius:8px;display:flex;align-items:center;justify-content:center}.animal-card{position:absolute;background:#fff;border:3px solid #8B4513;border-radius:8px;padding:8px;text-align:center;cursor:pointer;transition:all .3s;box-shadow:0 4px 10px rgba(0,0,0,.2);width:80px;height:100px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:14px;font-weight:bold}.animal-card:hover{transform:scale(1.1)}.a1{top:15%;left:30%}.a2{top:15%;left:50%}.a3{top:15%;right:15%}.mag{position:absolute;width:80px;height:80px;border:5px solid #444;border-radius:50%;cursor:pointer;transition:all .3s;background:radial-gradient(circle,rgba(255,255,255,.3),rgba(255,255,255,.1));display:flex;align-items:center;justify-content:center;font-size:30px;box-shadow:0 4px 10px rgba(0,0,0,.2)}.mag:hover{transform:scale(1.1)}.mag::after{content:'';position:absolute;bottom:-30px;right:-30px;width:30px;height:6px;background:#444;transform:rotate(45deg);border-radius:3px}.mag1{top:50%;left:35%}.mag2{top:60%;left:60%}.feature{position:absolute;background:rgba(255,215,0,.9);border:2px solid #FFA500;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font-size:12px;cursor:pointer;box-shadow:0 0 10px #FFD700}.feature:hover{transform:scale(1.2)}.c2{position:absolute;font-size:50px}.loc{position:absolute;background:#fff;border:3px solid #8B4513;border-radius:10px;padding:6px 10px;cursor:pointer;transition:all .3s;font-size:12px;box-shadow:0 4px 10px rgba(0,0,0,.2);text-align:center;min-width:70px}.loc:hover{transform:scale(1.1);background:#FFF8DC}.loc.found{background:#90EE90;border-color:#228B22}.p{background:#fff;border-radius:15px;padding:20px;box-shadow:0 4px 15px rgba(0,0,0,.1)}.p h3{color:#8B4513;margin-bottom:15px;border-bottom:2px dashed #A0522D;padding-bottom:8px}.cg{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:15px}.cd{background:linear-gradient(135deg,#FFF8DC,#F5DEB3);border:2px solid #8B4513;border-radius:8px;padding:10px;text-align:center;cursor:pointer;transition:all .3s;font-size:12px;min-height:70px;display:flex;flex-direction:column;justify-content:center;align-items:center}.cd:hover{transform:translateY(-3px)}.cd .e{font-size:24px;margin-bottom:5px}.cd.used{opacity:.4}.cd.correct{background:#90EE90;border-color:#228B22}.ib{background:#FFF8DC;padding:10px;border-radius:8px;margin-top:10px;font-size:13px;line-height:1.6}.b{background:linear-gradient(135deg,#8B4513,#A0522D);color:#fff;border:none;padding:10px 20px;border-radius:20px;cursor:pointer;font-size:14px;margin:5px;font-weight:bold}.ctl{display:flex;justify-content:center;gap:10px;margin-top:15px}.bd{display:inline-block;background:#8B4513;color:#fff;padding:5px 12px;border-radius:12px;font-size:14px;font-weight:bold;margin:3px}.tl{background:#fff;padding:15px;border-radius:12px;margin-top:20px;border:2px solid #A0522D}.tl h3{color:#8B4513;margin-bottom:10px}.tl ol{padding-left:25px;line-height:1.8}.fb{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:linear-gradient(135deg,#8B4513,#A0522D);color:#fff;padding:30px 50px;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,.3);font-size:28px;z-index:1000;display:none;text-align:center;font-weight:bold}.fb.show{display:block;animation:bounce .5s}@keyframes bounce{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.2)}}</style></head>
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>第14课《特征放大镜》</title><style>
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box }
+body {
+  font-family:"Microsoft YaHei",sans-serif;
+  background:linear-gradient(135deg,#8B4513,#D2691E);
+  min-height:100vh;
+  padding:20px }
+.c {
+  max-width:1400px;
+  margin:0 auto;
+  background:rgba(255,255,255,.95);
+  border-radius:20px;
+  padding:30px;
+  box-shadow:0 10px 40px rgba(0,0,0,.1) }
+.h {
+  text-align:center;
+  margin-bottom:20px;
+  padding-bottom:20px;
+  border-bottom:3px dashed #8B4513 }
+.ln {
+  display:inline-block;
+  background:linear-gradient(135deg,#8B4513,#A0522D);
+  color:#fff;
+  padding:8px 20px;
+  border-radius:20px;
+  font-size:16px;
+  margin-bottom:10px }
+h1 {
+  color:#8B4513;
+  font-size:36px;
+  margin:10px 0 }
+.sub {
+  color:#A0522D;
+  font-size:20px;
+  margin-bottom:10px }
+.k {
+  background:linear-gradient(135deg,#FFF8DC,#F5DEB3);
+  padding:15px;
+  border-radius:12px;
+  border-left:5px solid #8B4513;
+  margin:15px 0;
+  font-size:16px;
+  line-height:1.8 }
+.m {
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:20px;
+  margin-top:20px }
+.ma {
+  background:linear-gradient(135deg,#F5DEB3,#DEB887);
+  border-radius:15px;
+  padding:20px;
+  min-height:500px;
+  border:3px solid #8B4513 }
+.mt {
+  text-align:center;
+  color:#8B4513;
+  font-size:22px;
+  font-weight:bold;
+  margin-bottom:15px }
+.m2 {
+  position:relative;
+  width:100%;
+  height:420px;
+  background:linear-gradient(180deg,#DEB887,#A0522D);
+  border-radius:10px;
+  overflow:hidden;
+  border:2px solid #fff }
+.shelf {
+  position:absolute;
+  top:5%;
+  left:5%;
+  width:60px;
+  height:90%;
+  background:linear-gradient(180deg,#8B4513,#A0522D);
+  border:2px solid #fff;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-around;
+  padding:5px 0 }
+.shelf-book {
+  width:90%;
+  height:15%;
+  background:linear-gradient(90deg,#4169E1,#FF6B6B,#FFD700,#228B22);
+  border-radius:2px;
+  font-size:10px;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center }
+.desk {
+  position:absolute;
+  bottom:5%;
+  left:25%;
+  right:5%;
+  height:35%;
+  background:linear-gradient(180deg,#A0522D,#8B4513);
+  border:3px solid #654321;
+  border-radius:8px;
+  display:flex;
+  align-items:center;
+  justify-content:center }
+.animal-card {
+  position:absolute;
+  background:#fff;
+  border:3px solid #8B4513;
+  border-radius:8px;
+  padding:8px;
+  text-align:center;
+  cursor:pointer;
+  transition:all .3s;
+  box-shadow:0 4px 10px rgba(0,0,0,.2);
+  width:80px;
+  height:100px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  font-size:14px;
+  font-weight:bold }
+.animal-card:hover {
+  transform:scale(1.1) }
+.a1 {
+  top:15%;
+  left:30% }
+.a2 {
+  top:15%;
+  left:50% }
+.a3 {
+  top:15%;
+  right:15% }
+.mag {
+  position:absolute;
+  width:80px;
+  height:80px;
+  border:5px solid #444;
+  border-radius:50%;
+  cursor:pointer;
+  transition:all .3s;
+  background:radial-gradient(circle,rgba(255,255,255,.3),rgba(255,255,255,.1));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:30px;
+  box-shadow:0 4px 10px rgba(0,0,0,.2) }
+.mag:hover {
+  transform:scale(1.1) }
+.mag::after {
+  content:'';
+  position:absolute;
+  bottom:-30px;
+  right:-30px;
+  width:30px;
+  height:6px;
+  background:#444;
+  transform:rotate(45deg);
+  border-radius:3px }
+.mag1 {
+  top:50%;
+  left:35% }
+.mag2 {
+  top:60%;
+  left:60% }
+.feature {
+  position:absolute;
+  background:rgba(255,215,0,.9);
+  border:2px solid #FFA500;
+  border-radius:50%;
+  width:30px;
+  height:30px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:12px;
+  cursor:pointer;
+  box-shadow:0 0 10px #FFD700 }
+.feature:hover {
+  transform:scale(1.2) }
+.c2 {
+  position:absolute;
+  font-size:50px }
+.loc {
+  position:absolute;
+  background:#fff;
+  border:3px solid #8B4513;
+  border-radius:10px;
+  padding:6px 10px;
+  cursor:pointer;
+  transition:all .3s;
+  font-size:12px;
+  box-shadow:0 4px 10px rgba(0,0,0,.2);
+  text-align:center;
+  min-width:70px }
+.loc:hover {
+  transform:scale(1.1);
+  background:#FFF8DC }
+.loc.found {
+  background:#90EE90;
+  border-color:#228B22 }
+.p {
+  background:#fff;
+  border-radius:15px;
+  padding:20px;
+  box-shadow:0 4px 15px rgba(0,0,0,.1) }
+.p h3 {
+  color:#8B4513;
+  margin-bottom:15px;
+  border-bottom:2px dashed #A0522D;
+  padding-bottom:8px }
+.cg {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  margin-bottom:15px }
+.cd {
+  background:linear-gradient(135deg,#FFF8DC,#F5DEB3);
+  border:2px solid #8B4513;
+  border-radius:8px;
+  padding:10px;
+  text-align:center;
+  cursor:pointer;
+  transition:all .3s;
+  font-size:12px;
+  min-height:70px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center }
+.cd:hover {
+  transform:translateY(-3px) }
+.cd .e {
+  font-size:24px;
+  margin-bottom:5px }
+.cd.used {
+  opacity:.4 }
+.cd.correct {
+  background:#90EE90;
+  border-color:#228B22 }
+.ib {
+  background:#FFF8DC;
+  padding:10px;
+  border-radius:8px;
+  margin-top:10px;
+  font-size:13px;
+  line-height:1.6 }
+.b {
+  background:linear-gradient(135deg,#8B4513,#A0522D);
+  color:#fff;
+  border:none;
+  padding:10px 20px;
+  border-radius:20px;
+  cursor:pointer;
+  font-size:14px;
+  margin:5px;
+  font-weight:bold }
+.ctl {
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:15px }
+.bd {
+  display:inline-block;
+  background:#8B4513;
+  color:#fff;
+  padding:5px 12px;
+  border-radius:12px;
+  font-size:14px;
+  font-weight:bold;
+  margin:3px }
+.tl {
+  background:#fff;
+  padding:15px;
+  border-radius:12px;
+  margin-top:20px;
+  border:2px solid #A0522D }
+.tl h3 {
+  color:#8B4513;
+  margin-bottom:10px }
+.tl ol {
+  padding-left:25px;
+  line-height:1.8 }
+.fb {
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  background:linear-gradient(135deg,#8B4513,#A0522D);
+  color:#fff;
+  padding:30px 50px;
+  border-radius:20px;
+  box-shadow:0 20px 60px rgba(0,0,0,.3);
+  font-size:28px;
+  z-index:1000;
+  display:none;
+  text-align:center;
+  font-weight:bold }
+.fb.show {
+  display:block;
+  animation:bounce .5s }
+@keyframes bounce {
+  0%,100% {
+    transform:translate(-50%,-50%) scale(1) }
+  50% {
+    transform:translate(-50%,-50%) scale(1.2) }
+}
+</style></head>
 <body><div class="c">
 <div class="h"><span class="ln">第 14 课 · 算法基础</span><h1>🔍 特征放大镜</h1><div class="sub">特征是什么 = 区分事物的特点</div>
 <div class="k"><strong>🎯 核心知识：</strong>特征就是能区分事物的线索。好的特征=有区分度。找特征就像玩"找不同"！</div></div>
@@ -42,13 +351,87 @@
 <div class="tl"><h3>📚 互动流程</h3><ol><li><strong>找不同</strong>：猫vs狗</li><li><strong>放大镜扫描</strong>：胡须/尾巴</li><li><strong>特征提取</strong>：显著特征</li><li><strong>模式分类</strong>：翅膀+豹=花豹</li></ol></div>
 </div></div></div>
 <div class="fb" id="fb"></div>
-<script>let cnt=0,total=8,featCount=0,curAnimal=null;
-function findLoc(el){if(el.dataset.found==="true")return;el.dataset.found="true";el.classList.add("found");showFb("✅ 找到了！");chk()}
-function checkCard(c){if(c.classList.contains("used"))return;const id=c.dataset.id;const loc=document.querySelector(`.loc[data-id="${id}"]`);if(loc&&loc.dataset.found==="true"){c.classList.add("used","correct");cnt++;upd();showFb("🎉 答对了！")}else{showFb("❌ 先在地图上找到！")}}
-function showFb(m){const f=document.getElementById("fb");f.textContent=m;f.classList.add("show");setTimeout(()=>f.classList.remove("show"),1500)}
-function upd(){document.getElementById("prog").textContent=`${cnt}/${total}`;const b=["🔍","🐱","🎨","🏆"];document.getElementById("badges").innerHTML=Array(Math.min(cnt,4)).fill().map((_,i)=>`<span class="bd">${b[i]}</span>`).join("")}
-function chk(){const f=document.querySelectorAll('.loc[data-found="true"]').length;if(f>=3)setTimeout(()=>showFb("🎊 书房场景完成！"),500)}
-function clickAnimal(c){curAnimal=c.dataset.animal;document.getElementById("cur").textContent=c.textContent.trim();showFb(`选择了：${curAnimal}`)}
-function analyze(){if(!curAnimal){showFb("⚠️ 先选一个动物！");return}const map={cat:['胡须','尾巴','叫声'],dog:['尾巴','叫声','毛发'],butterfly:['翅膀','颜色','花纹']};const features=map[curAnimal]||[];featCount=Math.min(features.length,3);document.getElementById("feats").textContent=featCount;showFb(`🔍 ${curAnimal}的特征：${features.join('、')}`)}
-function resetGame(){cnt=0;featCount=0;curAnimal=null;document.getElementById("cur").textContent="未选择";document.getElementById("feats").textContent="0";document.querySelectorAll('.loc').forEach(e=>{e.dataset.found="false";e.classList.remove("found")});document.querySelectorAll('.cd').forEach(c=>c.classList.remove("used","correct"));upd();showFb("🔄 重置！")}</script>
+<script>
+let cnt=0,total=8,featCount=0,curAnimal=null;
+function findLoc(el){
+  if(el.dataset.found==="true")return;
+  el.dataset.found="true";
+  el.classList.add("found");
+  showFb("✅ 找到了！");
+  chk()
+}
+function checkCard(c){
+  if(c.classList.contains("used"))return;
+  const id=c.dataset.id;
+  const loc=document.querySelector(`.loc[data-id="${
+    id
+  }"]`);
+  if(loc&&loc.dataset.found==="true"){
+    c.classList.add("used","correct");
+    cnt++;
+    upd();
+    showFb("🎉 答对了！")
+  }else{
+    showFb("❌ 先在地图上找到！")
+  }
+}
+function showFb(m){
+  const f=document.getElementById("fb");
+  f.textContent=m;
+  f.classList.add("show");
+  setTimeout(()=>f.classList.remove("show"),1500)
+}
+function upd(){
+  document.getElementById("prog").textContent=`${
+    cnt
+  }/${
+    total
+  }`;
+  const b=["🔍","🐱","🎨","🏆"];
+  document.getElementById("badges").innerHTML=Array(Math.min(cnt,4)).fill().map((_,i)=>`<span class="bd">${
+    b[i]
+  }</span>`).join("")
+}
+function chk(){
+  const f=document.querySelectorAll('.loc[data-found="true"]').length;
+  if(f>=3)setTimeout(()=>showFb("🎊 书房场景完成！"),500)
+}
+function clickAnimal(c){
+  curAnimal=c.dataset.animal;
+  document.getElementById("cur").textContent=c.textContent.trim();
+  showFb(`选择了：${
+    curAnimal
+  }`)
+}
+function analyze(){
+  if(!curAnimal){
+    showFb("⚠️ 先选一个动物！");
+    return
+  }const map={
+    cat:['胡须','尾巴','叫声'],dog:['尾巴','叫声','毛发'],butterfly:['翅膀','颜色','花纹']
+  };
+  const features=map[curAnimal]||[];
+  featCount=Math.min(features.length,3);
+  document.getElementById("feats").textContent=featCount;
+  showFb(`🔍 ${
+    curAnimal
+  }的特征：${
+    features.join('、')
+  }`)
+}
+function resetGame(){
+  cnt=0;
+  featCount=0;
+  curAnimal=null;
+  document.getElementById("cur").textContent="未选择";
+  document.getElementById("feats").textContent="0";
+  document.querySelectorAll('.loc').forEach(e=>{
+    e.dataset.found="false";
+    e.classList.remove("found")
+  });
+  document.querySelectorAll('.cd').forEach(c=>c.classList.remove("used","correct"));
+  upd();
+  showFb("🔄 重置！")
+}
+</script>
 </body></html>
