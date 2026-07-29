@@ -67,136 +67,195 @@ h1 { color: #4169E1; font-size: 36px; margin: 10px 0; }
   padding: 8px;
   border-radius: 8px;
 }
-.mode-tabs {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin: 15px 0;
-}
-.tab {
-  padding: 10px 25px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  transition: all 0.3s;
-  border: 3px solid transparent;
-}
-.tab.train {
-  background: linear-gradient(135deg, #90EE90, #228B22);
-  color: white;
-}
-.tab.test {
-  background: linear-gradient(135deg, #FFB6C1, #DC143C);
-  color: white;
-}
-.tab.active {
-  transform: scale(1.1);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  border-color: #FFD700;
-}
-.cards-grid {
+
+/* 分类投放地图 */
+.sort-map {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: 1fr auto 1fr;
   gap: 15px;
   margin: 20px 0;
+  min-height: 350px;
 }
-.card {
-  perspective: 1000px;
+.zone {
+  border-radius: 15px;
+  padding: 20px;
+  border: 4px dashed;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+.zone.train {
+  background: linear-gradient(135deg, #F0FFF0, #98FB98);
+  border-color: #228B22;
+}
+.zone.test {
+  background: linear-gradient(135deg, #FFF0F0, #FFB6C1);
+  border-color: #DC143C;
+}
+.zone-title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.zone.train .zone-title { color: #228B22; }
+.zone.test .zone-title { color: #DC143C; }
+.zone-hint {
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 15px;
+  font-weight: normal;
+}
+.zone-drop {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  align-content: start;
+  padding: 10px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 10px;
+  min-height: 200px;
+}
+.zone-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: #FF8C00;
+  min-width: 40px;
+}
+.zone-divider .divider-text {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  letter-spacing: 8px;
+  background: linear-gradient(180deg, #FFD700, #FF8C00);
+  padding: 15px 5px;
+  border-radius: 20px;
+  color: white;
+  font-size: 14px;
+}
+
+/* 待分类卡池 */
+.card-pool {
+  background: linear-gradient(135deg, #F0F8FF, #E0FFFF);
+  border: 3px solid #4169E1;
+  border-radius: 15px;
+  padding: 15px;
+  margin: 20px 0;
+}
+.card-pool h3 {
+  color: #4169E1;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+.pool-cards {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 8px;
+}
+.pool-card {
+  width: 100%;
+  aspect-ratio: 5/7;
+  background: linear-gradient(135deg, #4169E1, #1E90FF);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  height: 200px;
+  font-size: 22px;
+  color: white;
+  font-weight: bold;
+  transition: all 0.3s;
+  user-select: none;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
 }
-.card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-}
-.card.flipped .card-inner {
-  transform: rotateY(180deg);
-}
-.card-front, .card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 12px;
+.pool-card:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+.pool-card.selected { background: linear-gradient(135deg, #FFD700, #FFA500); transform: scale(1.1); }
+
+/* 已投放的卡片 */
+.dropped-card {
+  background: white;
+  border-radius: 8px;
+  padding: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-.card.train .card-front {
-  background: linear-gradient(135deg, #F0FFF0, #98FB98);
-  border: 3px solid #228B22;
-}
-.card.train .card-back {
-  background: linear-gradient(135deg, #E0FFE0, #90EE90);
-  border: 3px solid #228B22;
-  transform: rotateY(180deg);
-}
-.card.test .card-front {
-  background: linear-gradient(135deg, #FFF0F0, #FFB6C1);
-  border: 3px solid #DC143C;
-}
-.card.test .card-back {
-  background: linear-gradient(135deg, #FFE0E0, #FFA0A0);
-  border: 3px solid #DC143C;
-  transform: rotateY(180deg);
-}
-.card-tag {
-  position: absolute;
-  top: 6px;
-  left: 8px;
   font-size: 11px;
-  padding: 2px 8px;
-  border-radius: 8px;
-  font-weight: bold;
+  border: 2px solid;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.dropped-card.train { border-color: #228B22; }
+.dropped-card.test { border-color: #DC143C; }
+.dropped-card:hover { transform: scale(1.05); }
+.dropped-card .mini-shape { font-size: 22px; }
+.dropped-card .mini-color { font-size: 18px; margin: 4px 0; }
+.dropped-card.correct {
+  background: linear-gradient(135deg, #90EE90, #228B22);
   color: white;
 }
-.card.train .card-tag { background: #228B22; }
-.card.test .card-tag { background: #DC143C; }
-.card-features {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  justify-content: center;
-  margin: 8px 0;
+.dropped-card.wrong {
+  background: linear-gradient(135deg, #FFB6C1, #DC143C);
+  color: white;
 }
-.feature-shape, .feature-color {
-  font-size: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 8px;
-  font-weight: bold;
+
+/* 弹窗显示卡牌详情 */
+.card-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  z-index: 1000;
+  transition: transform 0.3s;
+  min-width: 320px;
+  border: 4px solid #4169E1;
 }
-.shape-circle { background: #fff; border: 3px solid #333; border-radius: 50%; }
-.shape-square { background: #fff; border: 3px solid #333; }
-.shape-triangle { background: transparent; color: #333; font-size: 40px !important; }
-.shape-rect { background: #fff; border: 3px solid #333; width: 60px !important; }
-.plus { font-size: 24px; font-weight: bold; color: #555; }
-.card-answer-item {
-  font-size: 48px;
+.card-modal.show { transform: translate(-50%, -50%) scale(1); }
+.modal-shape {
+  font-size: 60px;
+  text-align: center;
   margin: 10px 0;
 }
-.card-answer-text {
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: 5px;
-}
-.card-reason {
-  font-size: 11px;
-  color: #555;
-  margin-top: 8px;
-  line-height: 1.4;
+.modal-color {
+  font-size: 24px;
   text-align: center;
+  margin: 10px 0;
 }
+.modal-answer {
+  font-size: 40px;
+  text-align: center;
+  margin: 10px 0;
+  font-weight: bold;
+}
+.modal-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 15px;
+}
+.btn-zone {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  transition: all 0.3s;
+}
+.btn-zone.train { background: linear-gradient(135deg, #228B22, #90EE90); }
+.btn-zone.test { background: linear-gradient(135deg, #DC143C, #FFB6C1); }
+.btn-zone:hover { transform: scale(1.05); }
+
 .btn {
   background: linear-gradient(135deg, #4169E1, #1E90FF);
   color: white;
@@ -242,15 +301,6 @@ h1 { color: #4169E1; font-size: 36px; margin: 10px 0; }
   font-weight: bold;
   color: #8B0000;
 }
-.timeline {
-  background: white;
-  padding: 15px;
-  border-radius: 12px;
-  margin-top: 20px;
-  border: 2px solid #4169E1;
-}
-.timeline h3 { color: #4169E1; margin-bottom: 10px; }
-.timeline ol { padding-left: 25px; line-height: 1.8; font-size: 13px; }
 .feedback {
   position: fixed;
   top: 50%;
@@ -262,7 +312,7 @@ h1 { color: #4169E1; font-size: 36px; margin: 10px 0; }
   border-radius: 20px;
   box-shadow: 0 20px 60px rgba(0,0,0,0.3);
   font-size: 28px;
-  z-index: 1000;
+  z-index: 1001;
   display: none;
   text-align: center;
   font-weight: bold;
@@ -283,7 +333,7 @@ h1 { color: #4169E1; font-size: 36px; margin: 10px 0; }
   <div class="header">
     <span class="lesson-num">第 17 课 · 机器学习</span>
     <h1>🏫 学校里的AI同学</h1>
-    <div class="subtitle">训练集 + 测试集 = 多看多学 + 全新考试</div>
+    <div class="subtitle">分类投放游戏：把20张卡分到对的地方！</div>
     <div class="knowledge">
       <strong>🎯 核心知识：</strong>训练集 = AI学习的练习题（有答案，反复看）；
       测试集 = AI考试的全新题（推理新颜色，检验规律）。
@@ -302,51 +352,68 @@ h1 { color: #4169E1; font-size: 36px; margin: 10px 0; }
   </div>
 
   <div class="stats">
-    <div style="font-size:18px;font-weight:bold;color:#4169E1;margin-bottom:8px">📊 学习进度</div>
+    <div style="font-size:18px;font-weight:bold;color:#4169E1;margin-bottom:8px">📊 投放进度</div>
     <div class="stats-row">
-      <span class="stats-item train-stat">训练集：<span id="trainCount">0</span>/10</span>
-      <span class="stats-item test-stat">测试集：<span id="testCount">0</span>/10</span>
-      <span class="stats-item" style="background:#FFD700;color:#8B4513">总进度：<span id="totalCount">0</span>/20</span>
+      <span class="stats-item train-stat">训练区：<span id="trainCount">0</span>/10</span>
+      <span class="stats-item test-stat">测试区：<span id="testCount">0</span>/10</span>
+      <span class="stats-item" style="background:#FFD700;color:#8B4513">待分类：<span id="pendingCount">20</span>/20</span>
     </div>
   </div>
 
-  <div class="mode-tabs">
-    <div class="tab train active" onclick="switchTab('train')">📗 训练集（10张绿卡）</div>
-    <div class="tab test" onclick="switchTab('test')">📕 测试集（10张红卡）</div>
+  <!-- 分类投放地图 -->
+  <h3 style="text-align:center;color:#4169E1;margin:15px 0 5px;font-size:20px">🗺️ AI学校分类投放地图</h3>
+  <div class="sort-map">
+    <!-- 左：训练区 -->
+    <div class="zone train" id="trainZone" ondragover="event.preventDefault()" ondrop="dropToZone(event, 'train')">
+      <div class="zone-title">📗 训练区</div>
+      <div class="zone-hint">学过的规律（红/黄/绿/蓝）</div>
+      <div class="zone-drop" id="trainDrop"></div>
+    </div>
+
+    <!-- 中：分隔 -->
+    <div class="zone-divider">
+      <div class="divider-text">绝不重叠</div>
+    </div>
+
+    <!-- 右：测试区 -->
+    <div class="zone test" id="testZone" ondragover="event.preventDefault()" ondrop="dropToZone(event, 'test')">
+      <div class="zone-title">📕 测试区</div>
+      <div class="zone-hint">推理的新题（含紫色新颜色）</div>
+      <div class="zone-drop" id="testDrop"></div>
+    </div>
   </div>
 
-  <!-- 训练集卡组 -->
-  <div id="trainSection">
-    <h2 style="color:#228B22;text-align:center;margin:15px 0">📗 训练集卡组（绿色边）</h2>
-    <div class="cards-grid" id="trainCards"></div>
-  </div>
-
-  <!-- 测试集卡组 -->
-  <div id="testSection" class="hidden">
-    <h2 style="color:#DC143C;text-align:center;margin:15px 0">📕 测试集卡组（红色边）</h2>
-    <div class="cards-grid" id="testCards"></div>
+  <!-- 待分类卡池 -->
+  <div class="card-pool">
+    <h3>🃏 待分类卡池（点击卡片选择）</h3>
+    <div class="pool-cards" id="poolCards"></div>
   </div>
 
   <div class="warning-box">
-    ⚠️ 作弊警示：如果把测试题偷偷塞进训练集？
+    ⚠️ 作弊警示：如果把测试题偷偷塞进训练区？
     AI会"背答案" → 考试失效 → 过拟合！
-    训练集 vs 测试集 = 绝对不能重叠！
+    训练区 vs 测试区 = 绝对不能重叠！
   </div>
 
   <div class="controls">
     <button class="btn" onclick="resetAll()">🔄 重新开始</button>
+    <button class="btn" onclick="checkAll()">✅ 检查全部</button>
     <button class="btn" onclick="showHint()">💡 提示</button>
-    <button class="btn" onclick="flipAll()">🔁 全部翻面</button>
   </div>
+</div>
 
-  <div class="timeline">
-    <h3>📚 互动流程</h3>
-    <ol>
-      <li><strong>训练阶段</strong>：翻绿色训练卡，学习"形状→物品"规律</li>
-      <li><strong>作弊警示</strong>：训练vs测试，绝不重叠（联系第16课）</li>
-      <li><strong>测试阶段</strong>：翻红色测试卡，用规律推理新颜色</li>
-      <li><strong>通关</strong>：20张卡都翻过，理解"训练集学规律，测试集检验"</li>
-    </ol>
+<!-- 卡牌详情弹窗 -->
+<div class="card-modal" id="cardModal">
+  <div style="text-align:center;font-size:14px;color:#666;margin-bottom:5px" id="modalTag">卡牌详情</div>
+  <div class="modal-shape" id="modalShape"></div>
+  <div class="modal-color" id="modalColor"></div>
+  <div style="text-align:center;font-size:14px;color:#666;margin:8px 0" id="modalItem">→ ?</div>
+  <div class="modal-buttons">
+    <button class="btn-zone train" onclick="placeToZone('train')">📗 投到训练区</button>
+    <button class="btn-zone test" onclick="placeToZone('test')">📕 投到测试区</button>
+  </div>
+  <div style="text-align:center;margin-top:10px">
+    <button class="btn" onclick="closeModal()" style="background:#888">取消</button>
   </div>
 </div>
 
@@ -362,10 +429,10 @@ const COLORS = {
 };
 
 const SHAPES = {
-  circle:   { emoji: '⭕', name: '圆形', cls: 'shape-circle' },
-  square:   { emoji: '⬜', name: '方形', cls: 'shape-square' },
-  triangle: { emoji: '🔺', name: '三角形', cls: 'shape-triangle' },
-  rect:     { emoji: '▬',  name: '长方形', cls: 'shape-rect' }
+  circle:   { emoji: '⭕', name: '圆形' },
+  square:   { emoji: '⬜', name: '方形' },
+  triangle: { emoji: '🔺', name: '三角形' },
+  rect:     { emoji: '▬',  name: '长方形' }
 };
 
 const ITEMS = {
@@ -375,7 +442,7 @@ const ITEMS = {
   rect:     { emoji: '🚪', name: '门' }
 };
 
-// 10张训练集：所有可能的（形状×颜色）组合，颜色限定为红/黄/绿/蓝
+// 训练集：颜色限定为红/黄/绿/蓝（已知）
 const TRAIN_DATA = [
   { shape: 'circle',   color: 'red',    rule: '圆形→气球，红色作前缀' },
   { shape: 'circle',   color: 'green',  rule: '圆形→气球，绿色作前缀' },
@@ -389,7 +456,7 @@ const TRAIN_DATA = [
   { shape: 'square',   color: 'red',    rule: '方形→积木，红色作前缀' }
 ];
 
-// 10张测试集：用训练集规律推理，颜色含蓝/紫等变体
+// 测试集：含紫/蓝等推理题
 const TEST_DATA = [
   { shape: 'circle',   color: 'blue',   reason: '规则：圆形=气球，蓝色变体' },
   { shape: 'square',   color: 'green',  reason: '规则：方形=积木，换绿色' },
@@ -403,149 +470,146 @@ const TEST_DATA = [
   { shape: 'rect',     color: 'purple', reason: '规则：长方形=门，紫色变体' }
 ];
 
-let trainFlipped = new Set();
-let testFlipped = new Set();
-let currentTab = 'train';
+// 合并所有卡（标注正确分区）
+const ALL_CARDS = [
+  ...TRAIN_DATA.map((d, i) => ({ ...d, id: 'T' + i, correctZone: 'train', tag: '📗' + (i+1) })),
+  ...TEST_DATA.map((d, i) => ({ ...d, id: 'E' + i, correctZone: 'test', tag: '📕' + (i+1) }))
+];
 
-function renderCards() {
-  const trainEl = document.getElementById('trainCards');
-  trainEl.innerHTML = TRAIN_DATA.map((d, i) => {
-    const shape = SHAPES[d.shape];
-    const color = COLORS[d.color];
-    const item = ITEMS[d.shape];
-    const colorName = color.name;
-    return `
-      <div class="card train" data-idx="${i}" onclick="flipTrainCard(${i})">
-        <div class="card-inner">
-          <div class="card-front">
-            <div class="card-tag">📗${i+1}</div>
-            <div class="card-features">
-              <div class="feature-shape ${shape.cls}" style="color:${color.color}">${shape.emoji}</div>
-              <div class="plus">+</div>
-              <div class="feature-color" style="background:${color.color};color:white">${color.emoji}</div>
-            </div>
-            <div style="font-size:13px;color:#228B22;font-weight:bold">${shape.name} + ${colorName}</div>
-            <div style="font-size:11px;color:#666;margin-top:6px">🤔 猜一猜</div>
-          </div>
-          <div class="card-back">
-            <div class="card-tag">📗${i+1}</div>
-            <div class="card-answer-item">${item.emoji}</div>
-            <div class="card-answer-text" style="color:${color.color}">${colorName}${item.name}</div>
-            <div class="card-reason">💡 ${d.rule}</div>
-          </div>
-        </div>
-      </div>
-    `;
-  }).join('');
+let placedCards = {};  // id -> zone
+let selectedCardId = null;
+let checked = false;
 
-  const testEl = document.getElementById('testCards');
-  testEl.innerHTML = TEST_DATA.map((d, i) => {
-    const shape = SHAPES[d.shape];
-    const color = COLORS[d.color];
-    const item = ITEMS[d.shape];
-    const colorName = color.name;
-    return `
-      <div class="card test" data-idx="${i}" onclick="flipTestCard(${i})">
-        <div class="card-inner">
-          <div class="card-front">
-            <div class="card-tag">📕${i+1}</div>
-            <div class="card-features">
-              <div class="feature-shape ${shape.cls}" style="color:${color.color}">${shape.emoji}</div>
-              <div class="plus">+</div>
-              <div class="feature-color" style="background:${color.color};color:white">${color.emoji}</div>
-            </div>
-            <div style="font-size:13px;color:#DC143C;font-weight:bold">${shape.name} + ${colorName}</div>
-            <div style="font-size:11px;color:#666;margin-top:6px">🤖 用规律推理</div>
-          </div>
-          <div class="card-back">
-            <div class="card-tag">📕${i+1}</div>
-            <div class="card-answer-item">${item.emoji}</div>
-            <div class="card-answer-text" style="color:${color.color}">${colorName}${item.name}</div>
-            <div class="card-reason">💡 ${d.reason}</div>
-          </div>
-        </div>
-      </div>
-    `;
+function renderPool() {
+  const poolEl = document.getElementById('poolCards');
+  poolEl.innerHTML = ALL_CARDS.map(c => {
+    if (placedCards[c.id]) return '<div></div>'; // 已投放，不显示
+    const isSelected = selectedCardId === c.id ? 'selected' : '';
+    return `<div class="pool-card ${isSelected}" data-id="${c.id}" onclick="selectCard('${c.id}')">${c.tag}</div>`;
   }).join('');
 }
 
-function flipTrainCard(i) {
-  const card = document.querySelector(`#trainCards .card[data-idx="${i}"]`);
-  card.classList.toggle('flipped');
-  if (card.classList.contains('flipped')) trainFlipped.add(i);
-  else trainFlipped.delete(i);
-  updateStats();
+function renderDropZones() {
+  const trainEl = document.getElementById('trainDrop');
+  const testEl = document.getElementById('testDrop');
+  trainEl.innerHTML = '';
+  testEl.innerHTML = '';
+
+  Object.entries(placedCards).forEach(([id, zone]) => {
+    const card = ALL_CARDS.find(c => c.id === id);
+    if (!card) return;
+    const shape = SHAPES[card.shape];
+    const color = COLORS[card.color];
+    const html = `
+      <div class="dropped-card ${zone}${checked ? (zone === card.correctZone ? ' correct' : ' wrong') : ''}" onclick="showCardDetail('${id}')">
+        <div class="mini-shape">${shape.emoji}</div>
+        <div class="mini-color" style="color:${color.color}">${color.emoji}</div>
+        <div style="font-size:9px">${card.tag}</div>
+      </div>
+    `;
+    if (zone === 'train') trainEl.innerHTML += html;
+    else testEl.innerHTML += html;
+  });
 }
 
-function flipTestCard(i) {
-  const card = document.querySelector(`#testCards .card[data-idx="${i}"]`);
-  card.classList.toggle('flipped');
-  if (card.classList.contains('flipped')) testFlipped.add(i);
-  else testFlipped.delete(i);
+function selectCard(id) {
+  if (placedCards[id]) return;
+  selectedCardId = id;
+  renderPool();
+  showCardDetail(id);
+}
+
+function showCardDetail(id) {
+  const card = ALL_CARDS.find(c => c.id === id);
+  if (!card) return;
+  const shape = SHAPES[card.shape];
+  const color = COLORS[card.color];
+  const item = ITEMS[card.shape];
+
+  document.getElementById('modalTag').textContent = card.tag + ' - ' + shape.name + ' + ' + color.name;
+  document.getElementById('modalShape').innerHTML = `<span style="color:${color.color}">${shape.emoji}</span> <span style="font-size:20px">${shape.name}</span>`;
+  document.getElementById('modalColor').innerHTML = `<span style="background:${color.color};color:white;padding:4px 12px;border-radius:8px">${color.emoji} ${color.name}</span>`;
+  document.getElementById('modalItem').textContent = '→ ?';
+  document.getElementById('cardModal').classList.add('show');
+}
+
+function closeModal() {
+  document.getElementById('cardModal').classList.remove('show');
+  selectedCardId = null;
+  renderPool();
+}
+
+function placeToZone(zone) {
+  if (!selectedCardId) return;
+  placedCards[selectedCardId] = zone;
+  closeModal();
   updateStats();
+  renderPool();
+  renderDropZones();
+  checkComplete();
+}
+
+function dropToZone(e, zone) {
+  e.preventDefault();
+  if (!selectedCardId) return;
+  placeToZone(zone);
 }
 
 function updateStats() {
-  document.getElementById('trainCount').textContent = trainFlipped.size;
-  document.getElementById('testCount').textContent = testFlipped.size;
-  document.getElementById('totalCount').textContent = trainFlipped.size + testFlipped.size;
+  const placed = Object.values(placedCards);
+  document.getElementById('trainCount').textContent = placed.filter(z => z === 'train').length;
+  document.getElementById('testCount').textContent = placed.filter(z => z === 'test').length;
+  document.getElementById('pendingCount').textContent = 20 - Object.keys(placedCards).length;
 }
 
-function switchTab(tab) {
-  currentTab = tab;
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  document.querySelector(`.tab.${tab}`).classList.add('active');
-  document.getElementById('trainSection').classList.toggle('hidden', tab !== 'train');
-  document.getElementById('testSection').classList.toggle('hidden', tab !== 'test');
+function checkAll() {
+  if (Object.keys(placedCards).length < 20) {
+    showFeedback('⚠️ 还有卡没投放完！');
+    return;
+  }
+  checked = true;
+  renderDropZones();
+  let correct = 0;
+  Object.entries(placedCards).forEach(([id, zone]) => {
+    const card = ALL_CARDS.find(c => c.id === id);
+    if (zone === card.correctZone) correct++;
+  });
+  if (correct === 20) {
+    showFeedback('🎉 全部正确！训练vs测试分得清！');
+  } else {
+    showFeedback(`⚠️ ${correct}/20 正确，再检查！`);
+  }
+}
+
+function checkComplete() {
+  if (Object.keys(placedCards).length === 20 && !checked) {
+    setTimeout(() => showFeedback('🎊 全部投放完成！点"检查全部"验证'), 500);
+  }
 }
 
 function resetAll() {
-  trainFlipped.clear();
-  testFlipped.clear();
-  document.querySelectorAll('.card').forEach(c => c.classList.remove('flipped'));
+  placedCards = {};
+  selectedCardId = null;
+  checked = false;
+  closeModal();
   updateStats();
+  renderPool();
+  renderDropZones();
   showFeedback('🔄 重新开始！');
 }
 
-function flipAll() {
-  if (currentTab === 'train') {
-    const allFlipped = trainFlipped.size === TRAIN_DATA.length;
-    document.querySelectorAll('#trainCards .card').forEach((c, i) => {
-      if (allFlipped) {
-        c.classList.remove('flipped');
-        trainFlipped.delete(i);
-      } else {
-        c.classList.add('flipped');
-        trainFlipped.add(i);
-      }
-    });
-  } else {
-    const allFlipped = testFlipped.size === TEST_DATA.length;
-    document.querySelectorAll('#testCards .card').forEach((c, i) => {
-      if (allFlipped) {
-        c.classList.remove('flipped');
-        testFlipped.delete(i);
-      } else {
-        c.classList.add('flipped');
-        testFlipped.add(i);
-      }
-    });
-  }
-  updateStats();
-}
-
 function showHint() {
-  showFeedback('💡 形状→物品，颜色是前缀！');
+  showFeedback('💡 学过的颜色（红/黄/绿/蓝）→ 训练区！新颜色（紫）→ 测试区！');
 }
 
 function showFeedback(msg) {
   const fb = document.getElementById('feedback');
   fb.textContent = msg;
   fb.classList.add('show');
-  setTimeout(() => fb.classList.remove('show'), 1500);
+  setTimeout(() => fb.classList.remove('show'), 2000);
 }
 
-renderCards();
+renderPool();
 updateStats();
 </script>
 </body>
