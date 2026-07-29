@@ -389,10 +389,53 @@ h1 { color: #4169E1; font-size: 36px; margin: 10px 0; }
     <div class="pool-cards" id="poolCards"></div>
   </div>
 
-  <div class="warning-box">
-    ⚠️ 作弊警示：如果把测试题偷偷塞进训练区？
-    AI会"背答案" → 考试失效 → 过拟合！
-    训练区 vs 测试区 = 绝对不能重叠！
+  <!-- 作弊警示·四块并列 -->
+  <div style="margin:20px 0">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-bottom:15px">
+      <div style="background:linear-gradient(135deg,#FFE4E1,#FFB6C1);border:3px solid #DC143C;border-radius:12px;padding:15px">
+        <div style="font-size:18px;font-weight:bold;color:#8B0000;text-align:center;margin-bottom:8px">❓ 错误做法</div>
+        <div style="font-size:13px;color:#8B0000;text-align:center">把📕测试题偷偷塞进📗训练区</div>
+        <div style="margin-top:10px;font-size:12px;color:#666">
+          <div>❌ AI会"背答案"</div>
+          <div>❌ 新题不会做</div>
+          <div>❌ 考试失效</div>
+        </div>
+      </div>
+      <div style="background:linear-gradient(135deg,#F0FFF0,#98FB98);border:3px solid #228B22;border-radius:12px;padding:15px">
+        <div style="font-size:18px;font-weight:bold;color:#006400;text-align:center;margin-bottom:8px">✅ 正确做法</div>
+        <div style="font-size:13px;color:#006400;text-align:center">📗训练题和📕测试题严格分开</div>
+        <div style="margin-top:10px;font-size:12px;color:#666">
+          <div>✅ AI学会规律</div>
+          <div>✅ 新题会做</div>
+          <div>✅ 考试通过</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:linear-gradient(135deg,#FFF8DC,#FFD700);border:3px solid #FFA500;border-radius:12px;padding:15px;margin-bottom:15px">
+      <div style="font-size:16px;font-weight:bold;color:#8B4513;text-align:center;margin-bottom:8px">🏫 现实类比：就像学校考试！</div>
+      <div style="font-size:13px;color:#333;line-height:1.6">
+        · 练习题（训练）vs 考试题（测试）<br>
+        · 考前老师漏题 → 学生死记硬背 → 考试不会！<br>
+        · 考前老师正常出题 → 学生学会方法 → 考试通过！<br>
+        <strong style="color:#8B0000">→ 训练vs测试绝不能重叠！</strong>
+      </div>
+    </div>
+
+    <div style="background:linear-gradient(135deg,#FFE4B5,#FFA500);border:3px dashed #FF8C00;border-radius:12px;padding:15px">
+      <div style="font-size:16px;font-weight:bold;color:#8B0000;text-align:center;margin-bottom:10px">🚨 3种"作弊"后果</div>
+      <div style="font-size:13px;color:#333;line-height:1.8">
+        <div><strong>① 训练高分 → 实际低分</strong>：背答案不会变通</div>
+        <div><strong>② 失去泛化能力</strong>：换了题就傻眼</div>
+        <div><strong>③ 真实场景失效</strong>：用户问新问题就答错</div>
+        <div style="margin-top:8px;padding:8px;background:rgba(255,255,255,0.7);border-radius:8px;text-align:center">
+          📌 <strong>联系第16课《过拟合》</strong>：鹦鹉背答案！
+        </div>
+        <div style="margin-top:8px;text-align:center;font-weight:bold;color:#8B0000">
+          💡 口诀："重叠就是作弊，作弊就是过拟合！"
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="controls">
